@@ -9,7 +9,7 @@ This script includes functions for:
 - assigning and removing diagnoses
 - pushing new case templates
 
-These functions in `logic_server.js` rely on internal reference files such as `labvalues.js` and `normalfindings_collection.js`, and interact with functions from `logic.js`. For more details on system logic, and how data flows, see **4. System Logic**.
+These functions in `logic_server.js` rely on internal reference files such as `labvalues.js` and `normalfindings_collection.js`, and interact with functions from `logic.js`. For more details on system logic, and how data flows, see [**4.1 System Logic**](../4_1_system_logic.md).
 
 ##### Key Functions
 

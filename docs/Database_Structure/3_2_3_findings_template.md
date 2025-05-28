@@ -72,9 +72,9 @@ The template serves as a text template. Values and written findings descriptions
 When a pathology is detected in the patient data (e.g., "tuboovarian_abscess": 1.0), the corresponding text is inserted into the report.
 
 ### Logic behind Findings Template
-1. User requests an examination (e.g. us_tv)
-2. The template defines the report layout
-3. vars provides randomized measurements
-4. If any pathology is present in pat_data, it is matched via vars_path
-5. If no pathology is found, a normal result is inserted
-6. The result is a fully written findings report
+1. User requests an examination (e.g. `us_tv`).
+2. The template defines the report layout.
+3. `vars` provides randomized measurements.
+4. If any pathology is present in pat_data, it is matched via `vars_path`.
+5. If no pathology is found, a normal result is inserted.
+6. The result is a fully written findings report.

@@ -7,7 +7,7 @@
 **Clinic Edge** supports two types of cases:
 
 - **Dynamic cases** are based on predefined probabilistic templates that auto-generate case-specific findings, values, and symptoms.
-- **Static cases** are based on fixed values and reports, usually representing a typical presentation of a diagnosis These cases are especially useful for teaching purposes.
+- **Static cases** are based on fixed values and reports, usually representing a typical presentation of a diagnosis.  These cases are especially useful for teaching purposes.
 
 All cases are stored as JSON files and managed through **Supabase**, the platform used as the backend database. 
 

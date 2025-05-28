@@ -19,7 +19,8 @@ The table supports two types of cases:
 The `case_data` field in `CaseTemplates` is a nested JSON object that contains patient demographics, findings, history, vitals, and other parameters and values. Hierarchy and categories are the same for both dynamic and static cases.
 
 Here is a simplified structure overview:
-`case_data`
+```
+case_data
 ├── case_id
 ├── internal_name
 ├── sc_key
@@ -52,7 +53,9 @@ Here is a simplified structure overview:
 │   │   ├── surgeries
 │   │   └── pre_existing_conditions
 │   └── menstruation
+```
 
+```mermaid
 graph TD 
     A(case_data) --> B(age) 
     A --> C(gender) 
@@ -82,6 +85,7 @@ graph TD
     G4 --> G41(urinalysis) 
     G4 --> G42(vaginal_swab) 
     A --> H(cardinal_symptoms)
+```
 
 ### Dynamic Cases
 
@@ -318,4 +322,4 @@ Another option is to only write reports about specific organs as shown below. Th
 }
 ```
 
-Normal values as well as normal findings do not have to be specified. They will be inserted as described in the next section. 
+Normal values as well as normal findings do not have to be specified. They will be inserted as described in the section [Reference Data](./3_5_reference_data.md). 

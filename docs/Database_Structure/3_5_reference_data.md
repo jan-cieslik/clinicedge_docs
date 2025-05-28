@@ -11,14 +11,17 @@ This file contains written findings and probabilistically generated values for m
 All entries are grouped by category keys, such as `"history"`, `"menstruation"`, `"microbiology"`, etc.
 
 Here is a simplified structure overview:
-`normalfindings_collection`
+```
+normalfindings_collection
 ├── normalfindings_invasive_diagnostics
 ├── normalfindings_microbiology
 ├── normalfindings_history
 ├── vitalGroups
 └── vitalRanges
+```
 
-`normalfindings_invasive_diagnostics`
+```
+normalfindings_invasive_diagnostics
 ├── invasive_diagnostics
 │   └── cytology_pathology
 │       ├── pap_smear
@@ -36,8 +39,10 @@ Here is a simplified structure overview:
 │       │   └── normal
 │       └── vulvar_biopsy
 │           └── normal
+```
 
-`normalfindings_microbiology`
+```
+normalfindings_microbiology
 ├── microbiology
 │   ├── urinalysis
 │   │   ├── normal
@@ -45,8 +50,10 @@ Here is a simplified structure overview:
 │   └── vaginal_swab
 │       ├── normal
 │       └── normal_during_postmenopause
+```
 
-`normalfindings_history`
+```
+normalfindings_history
 ├── history
 │   ├── general_history
 │   │   ├── surgeries
@@ -69,16 +76,20 @@ Here is a simplified structure overview:
 │           ├── last_menstrual_period
 │           ├── bleeding_pattern
 │           └── contraception
+```
 
-`vitalGroups`
+```
+vitalGroups
 └── vitals
     ├── temperature
     ├── respiratory_rate
     ├── blood_pressure_systolic
     ├── blood_pressure_diastolic
     └── heart_rate
+```
 
-`vitalRanges`
+```
+vitalRanges
 ├── temperature
 │   ├── normal
 │   ├── fever
@@ -97,6 +108,7 @@ Here is a simplified structure overview:
 └── heart_rate
     ├── normal
     └── tachycardia
+```
 
 Normal findings can take the form of:
 
@@ -139,10 +151,10 @@ Some values are generated based on defined probabilities. This allows the simula
 }  
 ```         
 
-One value will be selected based on the probabilities. The singular: true flag ensures only one value from the set is selected.
+One value will be selected based on the probabilities. The `"singular": true` flag ensures only one value from the set is selected.
 
 ##### 3. Probabilistic value generation without singular constraint
-The probabilistic model can also be used to without the singular: true flag to generate multiple co-occurring findings, such as past surgeries or pre-existing conditions. Each entry has a chance of being included.
+The probabilistic model can also be used to without the `"singular": true` flag to generate multiple co-occurring findings, such as past surgeries or pre-existing conditions. Each entry has a chance of being included.
 
 **Example:**
 ```json
@@ -164,7 +176,7 @@ The probabilistic model can also be used to without the singular: true flag to g
 Each entry has an independent chance of being selected. Probabilities in this file can reflect general prevalences.
 
 ##### 4. Vitals: Value ranges
-When "normal" is specified for vitals in case_data, values are randomly selected from predefined normal ranges. 
+When "normal" is specified for vitals in `case_data`, values are randomly selected from predefined normal ranges. 
 
 **Example:**
 ```json
@@ -176,7 +188,7 @@ When "normal" is specified for vitals in case_data, values are randomly selected
 } 
 ``` 
 
-If "temperature": "normal" is specified in `case_data`, a value between 36.0 and 37.2 °C is randomly generated.
+If `"temperature": "normal"` is specified in `case_data`, a value between 36.0 and 37.2 °C is randomly generated.
 
 #### 3.5.2 `labvalues.js`
 
