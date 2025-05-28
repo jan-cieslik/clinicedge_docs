@@ -3,7 +3,6 @@
 The logic of Clinic Edge is based on processing of static template data into dynamic, patient-specific cases and diagnostic reports. This process relies on several data bases including Supabasa tables, internal reference files and internal logic scripts. The data flow consists of multiple steps and interactions.
 
 ### 4.1 Data Flow 
-
 ```mermaid
 flowchart TD
  subgraph Templates["Templates (Static Source Data)"]
