@@ -53,6 +53,36 @@ Here is a simplified structure overview:
 │   │   └── pre_existing_conditions
 │   └── menstruation
 
+graph TD 
+    A(case_data) --> B(age) 
+    A --> C(gender) 
+    A --> D(labs) 
+    A --> E(vitals) 
+    A --> F(history) 
+    F --> F1(general_history) 
+    F1 --> F2(height) 
+    F1 --> F3(bmi) 
+    F1 --> F4(surgeries) 
+    F1 --> F5(pre_existing_conditions) 
+    F --> F6(menstruation) 
+    A --> G(findings) 
+    G --> G1(imaging) 
+    G1 --> G11(us) 
+    G1 --> G12(mri) 
+    G1 --> G13(ct) 
+    G1 --> G14(xray) 
+    G --> G2(invasive_diagnostics) 
+    G2 --> G21(surgery) 
+    G2 --> G22(cytology_pathology) 
+    G --> G3(physical) 
+    G3 --> G31(abdominal) 
+    G3 --> G32(vaginal) 
+    G3 --> G33(breast) 
+    G --> G4(microbiology) 
+    G4 --> G41(urinalysis) 
+    G4 --> G42(vaginal_swab) 
+    A --> H(cardinal_symptoms)
+
 ### Dynamic Cases
 
 Dynamic case files are stored as separate JSON files, and transferred into a single csv table using a python script to then import the csv into Supabase.

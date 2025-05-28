@@ -35,7 +35,7 @@
 #### 3.6.3 Image Usage
 
 ## 4. System Logic
-### 4.1 Data Flow  ?
+### 4.1 Data Flow
 
 ## 5. Tutorials
 ### 5.1 How to Create a New Case
