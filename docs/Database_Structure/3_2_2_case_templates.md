@@ -8,11 +8,11 @@ The table supports two types of cases:
 
 ### Table Structure
 
-| Column        | Format | Type   | Description                                                               |
-|---------------|--------|------------------------------------------------------------------------------------|
-| `case_id`     | bigint | number | Internal ID for each case template                                        |
-| `case_key`    | text   | string | Identifier for each case (e.g., `"adnexitis"`,`"ectopic_pregnancy"`)      |
-| `case_data`   | jsonb  | json   | JSON object containing all case-specific parameters                       |
+| Column        | Format  | Type   | Description                                                               |
+|---------------|---------|--------|---------------------------------------------------------------------------|
+| `case_id`     | bigint  | number | Internal ID for each case template                                        |
+| `case_key`    | text    | string | Identifier for each case (e.g., `"adnexitis"`, `"ectopic_pregnancy"`)     |
+| `case_data`   | jsonb   | json   | JSON object containing all case-specific parameters                       |
 
 ![](./Images/3_2_2_case_templates.jpg)
 

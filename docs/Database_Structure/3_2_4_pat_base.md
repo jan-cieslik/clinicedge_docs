@@ -2,7 +2,13 @@
 
 ### Table Structure
 
-![](./Images/3_2_4_pat_base.jpg)
+| Column        | Format  | Type   | Description                                                               |
+|---------------|---------|--------|---------------------------------------------------------------------------|
+| `pat_id`     | bigint  | number | Internal ID for each generated patient case                                |
+| `case_id`     | bigint  | number | Internal ID for each case template                                        |
+| `pat_data`   | jsonb   | json   | JSON object containing all generated patient-specific parameters           |
+
+![](./Images/3_2_4_pat_base_supabase.jpg)
 
 Dynamic patient cases are generated from `case_data` within `CaseTemplates` applying probabilistic variations.
 

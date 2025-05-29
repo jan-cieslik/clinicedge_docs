@@ -10,16 +10,21 @@ This script includes functions for:
 
 ```mermaid
 graph TD
-  A[logic_server.js] --> B[generateLabValues]
-  A --> C[generateVitalValues]
-  A --> D[generateFinding]
-  A --> E[requestLab]
-  A --> F[requestFinding]
-  A --> G[addRx]
-  A --> H[addDiagnosis]
-  A --> I[removeDiagnosis]
-  A --> J[getRx]
-  A --> K[pushCaseTemplates]
+  A[logic_server.js]:::logic --> B[generateLabValues]:::logic
+  A --> C[generateVitalValues]:::logic
+  A --> D[generateFinding]:::logic
+  A --> E[requestLab]:::logic
+  A --> F[requestFinding]:::logic
+  A --> G[addRx]:::logic
+  A --> H[addDiagnosis]:::logic
+  A --> I[removeDiagnosis]:::logic
+  A --> J[getRx]:::logic
+  A --> K[pushCaseTemplates]:::logic
+
+classDef supabase fill:#40cc8c,stroke:#000000,stroke-width:1px;
+classDef UI fill:#30acac,stroke:#000000,stroke-width:1px;
+classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
+classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
 These functions in `logic_server.js` rely on internal reference files such as `labvalues.js` and `normalfindings_collection.js`, and interact with functions from `logic.js`. For more details on system logic, and how data flows, see [**4.1 System Logic**](../4_1_system_logic.md).
@@ -41,12 +46,17 @@ Randomly generates lab values based on predefined ranges from `labvalues.js`
 
 ```mermaid
 flowchart TD
-    A["generateLabValues"] --> B["labvalues.js"] & H["Supabase"]
-    H --> E["CaseTemplates"] & F["PatBase"]
-    E --> G["case_data"]
-    G <--> I["pat_data"]
+    A["generateLabValues"]:::logic --> B["labvalues.js"]:::reference & H["Supabase"]:::supabase
+    H --> E["CaseTemplates"]:::supabase & F["PatBase"]:::supabase
+    E --> G["case_data"]:::supabase
+    G <--> I["pat_data"]:::supabase
     F --> I
-    B --> C["labValueGroups"] & D["labValueRanges"]
+    B --> C["labValueGroups"]:::reference & D["labValueRanges"]:::reference
+  
+classDef supabase fill:#40cc8c,stroke:#000000,stroke-width:1px;
+classDef UI fill:#30acac,stroke:#000000,stroke-width:1px;
+classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
+classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
 ##### 2. `generateVitalValues`
@@ -64,12 +74,17 @@ Generates realistic vital sign values (e.g., heart rate, temperature) using gene
 
 ```mermaid
 flowchart TD
-    A["generateVitalValues"] --> B["normalfindings_collection.js"] & H["Supabase"]
-    B --> C["vitalGroups"] & D["vitalRanges"]
-    H --> E["CaseTemplates"] & F["PatBase"]
-    E --> G["case_data"]
-    G <--> I["pat_data"]
+    A["generateVitalValues"]:::logic --> B["normalfindings_collection.js"]:::reference & H["Supabase"]:::supabase
+    B --> C["vitalGroups"]:::reference & D["vitalRanges"]:::reference
+    H --> E["CaseTemplates"]:::supabase & F["PatBase"]:::supabase
+    E --> G["case_data"]:::supabase
+    G <--> I["pat_data"]:::supabase
     F --> I
+
+classDef supabase fill:#40cc8c,stroke:#000000,stroke-width:1px;
+classDef UI fill:#30acac,stroke:#000000,stroke-width:1px;
+classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
+classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
 ##### 3. `generateFinding`
@@ -89,11 +104,16 @@ Creates a written diagnostic report for an examination request (e.g. ultrasound 
 
 ```mermaid
 flowchart TD
-    A["generateFinding"] --> B["Supabase"] & C["logic.js"]
-    B --> D["PatFindings"] & E["CaseTemplates"] & F["FindingsTemplate"]
-    D --> G["pat_data"]
-    E --> I["case_data"]
+    A["generateFinding"]:::logic --> B["Supabase"]:::supabase & C["logic.js"]:::logic
+    B --> D["PatFindings"]:::supabase & E["CaseTemplates"]:::supabase & F["FindingsTemplate"]:::supabase
+    D --> G["pat_data"]:::supabase
+    E --> I["case_data"]:::supabase
     G <--> I
+
+classDef supabase fill:#40cc8c,stroke:#000000,stroke-width:1px;
+classDef UI fill:#30acac,stroke:#000000,stroke-width:1px;
+classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
+classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
 ##### 4. `requestLab`
@@ -117,8 +137,13 @@ Stores medications for a patient in the `PatRx` Table via Supabase
 
 ```mermaid
 flowchart TD
-    A["addRx"] --> B["Supabase"]
-    B --> C["PatRx"]
+    A["addRx"]:::logic --> B["Supabase"]:::supabase
+    B --> C["PatRx"]:::UI
+
+classDef supabase fill:#40cc8c,stroke:#000000,stroke-width:1px;
+classDef UI fill:#30acac,stroke:#000000,stroke-width:1px;
+classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
+classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
 ##### 6. `requestFinding`
