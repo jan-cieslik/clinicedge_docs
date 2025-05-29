@@ -44,4 +44,4 @@
 
 ## 6. Appendices
 ### 6.1 FAQ
-### 6.2
+### 6.2 Color Coding for Mermaid Diagrams

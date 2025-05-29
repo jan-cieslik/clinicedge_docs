@@ -14,6 +14,8 @@ The table supports two types of cases:
 | `case_key`    | text   | string | Identifier for each case (e.g., `"adnexitis"`,`"ectopic_pregnancy"`)      |
 | `case_data`   | jsonb  | json   | JSON object containing all case-specific parameters                       |
 
+![](./Images/3_2_2_case_templates.jpg)
+
 ### Case Data Structure (applies to all cases)
 
 The `case_data` field in `CaseTemplates` is a nested JSON object that contains patient demographics, findings, history, vitals, and other parameters and values. Hierarchy and categories are the same for both dynamic and static cases.

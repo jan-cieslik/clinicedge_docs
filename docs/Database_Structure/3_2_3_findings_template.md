@@ -2,13 +2,21 @@
 
 The `FindingsTemplate` table enables automated rendering of written medical reports for each diagnostic method (e.g., ultrasound, physical exam, surgery). Each `request_type` defines how a specific finding in `pat_data`, rendered based on the probabilities in `case_data`, should be reported, when the user requests a diagnostic method.
 
+### Table Structure
+
+![](./Images/3_2_3_findings_template.jpg)
+
 **title**: Title of the Finding Report
+
 **request_group**: General category (e.g., "imaging", "physical", "surgery") -> refers to src/utils/logic/requests.js, e.g. "imaging"
-**request_item**: -> Modality (e.g., "us", "mri", "abdominal") -> refers to src/utils/logic/requests.js, e.g. "us"
-**request_type**: -> Specific subtype (e.g., "us_tv", "ct_abdomen") -> refers to src/utils/logic/requests.js, e.g. "us_tv"
 
-**template**: defines the report structure including the available variables under `$findings` e.g.
+**request_item**: Modality (e.g., "us", "mri", "abdominal") -> refers to src/utils/logic/requests.js, e.g. "us"
 
+**request_type**: Specific subtype (e.g., "us_tv", "ct_abdomen") -> refers to src/utils/logic/requests.js, e.g. "us_tv"
+
+**template**: Report structure including the available variables under `$findings`
+
+**Example `template`**:
 ```
 Fragestellung: $req.question
 Diagnosis: $req.diagnosis
@@ -33,6 +41,8 @@ $findings.common.pathology
 The template serves as a text template. Values and written findings descriptions are injected dynamically during case rendering.
 
 **vars**: defines quantitative and qualitative variables for randomization under `$findings` e.g.
+
+**Example `vars`**:
 ```json
 {
     "uterus": {
@@ -54,6 +64,8 @@ The template serves as a text template. Values and written findings descriptions
 - singular: true → ensures only one value is selected (e.g., one uterus position)
 
 **vars_path**: generates textual descriptions for pathological findings from `pat_data` e.g.:
+
+**Example `vars_path`**:
 ```json
 {
   "common": {

@@ -8,6 +8,7 @@ This script includes functions for:
 - Prescribing medications
 - Assigning and removing diagnoses
 
+```mermaid
 graph TD
   A[logic_server.js] --> B[generateLabValues]
   A --> C[generateVitalValues]
@@ -19,6 +20,7 @@ graph TD
   A --> I[removeDiagnosis]
   A --> J[getRx]
   A --> K[pushCaseTemplates]
+```
 
 These functions in `logic_server.js` rely on internal reference files such as `labvalues.js` and `normalfindings_collection.js`, and interact with functions from `logic.js`. For more details on system logic, and how data flows, see [**4.1 System Logic**](../4_1_system_logic.md).
 
@@ -37,6 +39,7 @@ Randomly generates lab values based on predefined ranges from `labvalues.js`
 - Add or adjust lab value reference ranges in `labvalues.js`
 - Define case-specific lab values and ranges directly in `case_data` in the `CaseTemplates` Table via Supabase
 
+```mermaid
 flowchart TD
     A["generateLabValues"] --> B["labvalues.js"] & H["Supabase"]
     H --> E["CaseTemplates"] & F["PatBase"]
@@ -44,6 +47,7 @@ flowchart TD
     G <--> I["pat_data"]
     F --> I
     B --> C["labValueGroups"] & D["labValueRanges"]
+```
 
 ##### 2. `generateVitalValues`
 
@@ -58,6 +62,7 @@ Generates realistic vital sign values (e.g., heart rate, temperature) using gene
 - Add or adjust vital sign reference ranges in `normalfindings_collection.js`
 - Define case-specific vital sign values directly in `case_data` in the `CaseTemplates` Table via Supabase
 
+```mermaid
 flowchart TD
     A["generateVitalValues"] --> B["normalfindings_collection.js"] & H["Supabase"]
     B --> C["vitalGroups"] & D["vitalRanges"]
@@ -65,6 +70,7 @@ flowchart TD
     E --> G["case_data"]
     G <--> I["pat_data"]
     F --> I
+```
 
 ##### 3. `generateFinding`
 
@@ -81,12 +87,14 @@ Creates a written diagnostic report for an examination request (e.g. ultrasound 
 - Adjust template, vars, and vars_path in `FindingsTemplate` Table via Supabase
 - Modify case-specific findings in `case_data` in the `CaseTemplates` Table via Supabase
 
+```mermaid
 flowchart TD
     A["generateFinding"] --> B["Supabase"] & C["logic.js"]
     B --> D["PatFindings"] & E["CaseTemplates"] & F["FindingsTemplate"]
     D --> G["pat_data"]
     E --> I["case_data"]
     G <--> I
+```
 
 ##### 4. `requestLab`
 
@@ -107,9 +115,11 @@ Stores medications for a patient in the `PatRx` Table via Supabase
 
 **How it can be modified:**  
 
+```mermaid
 flowchart TD
     A["addRx"] --> B["Supabase"]
     B --> C["PatRx"]
+```
 
 ##### 6. `requestFinding`
 

@@ -1,4 +1,9 @@
 #### 3.2.4 `PatBase`
+
+### Table Structure
+
+![](./Images/3_2_4_pat_base.jpg)
+
 Dynamic patient cases are generated from `case_data` within `CaseTemplates` applying probabilistic variations.
 
 - age:
