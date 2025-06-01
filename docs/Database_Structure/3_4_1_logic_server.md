@@ -3,7 +3,7 @@
 The `logic_server.js` file contains logic functions to process and transform patient-specific data. It acts as connection between the Supabase database and the Clinic Edge application. 
 
 This script includes functions for:
-- Generating lab values and vital signs
+- Requesting and generating lab values and vital signs
 - Requesting, creating and storing diagnostic findings
 - Prescribing medications
 - Assigning and removing diagnoses
@@ -31,7 +31,17 @@ These functions in `logic_server.js` rely on internal reference files such as `l
 
 ##### Key Functions
 
-##### 1. `generateLabValues`
+##### 1. `requestLab`
+
+**What it does:**  
+Executes the generation of a lab value report using the `generateLabValues` function, when the user requests lab values
+
+**What it connects to:**  
+- Executes `generateLabValues` function (see above) to fetch and randomize lab values
+
+**How it can be modified:**  
+
+##### 2. `generateLabValues`
 
 **What it does:**  
 Randomly generates lab values based on predefined ranges from `labvalues.js`
@@ -59,7 +69,7 @@ classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
-##### 2. `generateVitalValues`
+##### 3. `generateVitalValues`
 
 **What it does:**  
 Generates realistic vital sign values (e.g., heart rate, temperature) using general or case-specific ranges.
@@ -87,7 +97,18 @@ classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
-##### 3. `generateFinding`
+##### 4. `requestFinding`
+
+**What it does:**  
+Executes the generation of an examination report using the `generateFinding`function and saves it to `PatFindings`, when the user requests an examination
+
+**What it refers/connects to:**  
+- Executes `generateFinding` function (see below)
+- Stores the report into the `PatFindings` Table via Supabase
+
+**How it can be modified:**  
+
+##### 5. `generateFinding`
 
 **What it does:**  
 Creates a written diagnostic report for an examination request (e.g. ultrasound or physical exam)
@@ -116,17 +137,7 @@ classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
-##### 4. `requestLab`
-
-**What it does:**  
-Executes the generation of a lab value report using the `generateLabValues` function, when the user requests lab values
-
-**What it connects to:**  
-- Executes `generateLabValues` function (see above) to fetch and randomize lab values
-
-**How it can be modified:**  
-
-##### 5. `addRx`
+##### 6. `addRx`
 
 **What it does:**  
 Stores medications for a patient in the `PatRx` Table via Supabase
@@ -145,17 +156,6 @@ classDef UI fill:#30acac,stroke:#000000,stroke-width:1px;
 classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
-
-##### 6. `requestFinding`
-
-**What it does:**  
-Executes the generation of an examination report using the `generateFinding`function and saves it to `PatFindings`, when the user requests an examination
-
-**What it refers/connects to:**  
-- Executes `generateFinding` function (see above)
-- Stores the report into the `PatFindings` Table via Supabase
-
-**How it can be modified:**  
 
 ##### 7. `addDiagnosis` & `removeDiagnosis`
 
