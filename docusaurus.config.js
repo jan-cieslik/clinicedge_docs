@@ -104,7 +104,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/docs/ce/intro',
+                to: '/docs/1_0_documentation_overview',
               },
             ],
           },
@@ -146,6 +146,11 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+    
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 };
 
 export default config;
