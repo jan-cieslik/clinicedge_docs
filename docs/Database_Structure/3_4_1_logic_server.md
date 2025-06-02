@@ -1,4 +1,4 @@
-#### 3.4.1  `logic_server.js`
+# 3.4.1  `logic_server.js`
 
 The `logic_server.js` file contains logic functions to process and transform patient-specific data. It acts as connection between the Supabase database and the Clinic Edge application. 
 

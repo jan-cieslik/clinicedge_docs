@@ -1,4 +1,4 @@
-#### 3.2.1 `CardinalSymptoms`
+# 3.2.1 `CardinalSymptoms`
 
 The `CardinalSymptoms` table in Supabase defines a reference list of common cardinal symptoms in gynecological and obstetrics diagnoses. It serves as a symptom dictionary that allows diagnoses to be grouped based on shared clinical manifestations. 
 

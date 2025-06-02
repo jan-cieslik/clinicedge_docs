@@ -1,4 +1,10 @@
-﻿# Clinic Edge Documentation
+﻿---
+sidebar_position: 1
+---
+
+# 1.0 Clinic Edge Documentation
+This page acts as a roadmap for our docs.
+Please use the navbar on the left to access the pages we have already implemented.
 
 ## 1. Clinic Edge Project
 ### 1.1 Project Introduction

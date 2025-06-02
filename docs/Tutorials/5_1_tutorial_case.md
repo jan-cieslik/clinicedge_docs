@@ -1,4 +1,4 @@
-### 5.1 How to Create a New Case  
+# 5.1 How to Create a New Case  
 
 1. Add a JSON case to [`CaseTemplates`](../Database_Structure/3_2_2_case_templates.md).
   - Assign a new `case_id`.

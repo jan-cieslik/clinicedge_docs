@@ -1,4 +1,7 @@
-### 6.2 Color Coding for Mermaid Diagrams
+---
+sidebar_position: 7
+---
+# 6.2 Color Coding for Mermaid Diagrams
 
 Mermaid diagrams follow a standardized color coding scheme in the Clinic Edge documentation. This scheme improves visualization of system components such as Supabase tables, internal logic files, static reference data, and dynamically generated patient data.
 

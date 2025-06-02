@@ -1,4 +1,4 @@
-#### 3.2.9 `PatRx` 
+# 3.2.9 `PatRx` 
 
 The `PatRx` table in Supabase stores all prescriptions for each patient case. Each medication is linked to a patient via `pat_id` and receives a unique `rx_id`. The table supports storage of up to three medications, with metadata including the medication name, Pharmazentralnummer (PZN), and an internal `rx_key`. 
 

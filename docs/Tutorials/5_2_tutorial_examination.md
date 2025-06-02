@@ -1,4 +1,4 @@
-### 5.2 How to Create a New Examination Type  
+# 5.2 How to Create a New Examination Type  
 
 To add a new exam (e.g., `breast_us`):
 1. Create a new [`FindingsTemplate`](../Database_Structure/3_2_3_findings_template.md) entry.

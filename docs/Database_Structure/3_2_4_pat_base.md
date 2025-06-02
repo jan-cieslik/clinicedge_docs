@@ -1,4 +1,4 @@
-#### 3.2.4 `PatBase`
+# 3.2.4 `PatBase`
 
 ### Table Structure
 

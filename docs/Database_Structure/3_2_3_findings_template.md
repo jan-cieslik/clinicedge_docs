@@ -1,4 +1,4 @@
-#### 3.2.3 `FindingsTemplate`
+# 3.2.3 `FindingsTemplate`
 
 The `FindingsTemplate` table enables automated rendering of written medical reports for each diagnostic method (e.g., ultrasound, physical exam, surgery). Each `request_type` defines how a specific finding in `pat_data`, rendered based on the probabilities in `case_data`, should be reported, when the user requests a diagnostic method.
 

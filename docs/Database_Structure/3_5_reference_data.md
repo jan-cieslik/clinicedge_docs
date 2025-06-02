@@ -1,4 +1,4 @@
-### 3.5 Reference Data
+# 3.5 Reference Data
 
 If a field or value in `case_data` is defined as `"normal"` or blank, data is automatically retrieved from predefined reference files and injected into the into the dynamically generated `pat_data`.
 

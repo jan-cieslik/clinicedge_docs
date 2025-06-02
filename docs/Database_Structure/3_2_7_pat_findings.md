@@ -1,4 +1,4 @@
-#### 3.2.7 `PatFindings` 
+# 3.2.7 `PatFindings` 
 
 The `PatFindings` table in Supabase contains all diagnostic findings requested by the user for each patient case. Every diagnostic request is represented by a single row and inludes the examination group, item, and type, as well as the generated report. Each finding is linked to the corresponding patient via `pat_id`.
 

@@ -1,4 +1,7 @@
-## 1.1 Project Introduction
+---
+sidebar_position: 2
+---
+# 1.1 Project Introduction
 
 **Clinic Edge** is a patient case simulator designed for medical education that generates realistic clinical case scenarios in gynecology and obstetrics, supporting both static and dynamic patient cases. Dynamic cases are built upon probabilistic templates, allowing the system to generate an endless number of non-repititive patient cases. 
 

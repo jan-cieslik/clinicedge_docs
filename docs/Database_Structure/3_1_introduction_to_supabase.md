@@ -1,4 +1,4 @@
-### 3.1 Introduction to Supabase
+# 3.1 Introduction to Supabase
 
 **Supabase** is used as the backend database for Clinic Edge. It consists of multiple tables for storage and management of data, including case data, patient data, and more. These tables and their associated data interact with each other and represent key components of the Clinic Edge workflow.
 

@@ -1,4 +1,4 @@
-#### 3.2.2 `CaseTemplates`
+# 3.2.2 `CaseTemplates`
 
 The `CaseTemplates` table contains the diagnostic templates used to generate patient cases. Each row represents a diagnosis, with `case_data` encoded as a JSON object that includes case-specific findings and case-specific such as expected lab values, findings, symptoms, and clinical history. Templates are static and remain unchanged. Randomization are applied at the point of patient case generation. 
 
