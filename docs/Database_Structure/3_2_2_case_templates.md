@@ -8,11 +8,13 @@ The table supports two types of cases:
 
 ### Table Structure
 
-| Column        | Format | Type   | Description                                                               |
-|---------------|--------|------------------------------------------------------------------------------------|
-| `case_id`     | bigint | number | Internal ID for each case template                                        |
-| `case_key`    | text   | string | Identifier for each case (e.g., `"adnexitis"`,`"ectopic_pregnancy"`)      |
-| `case_data`   | jsonb  | json   | JSON object containing all case-specific parameters                       |
+| Column        | Format  | Type   | Description                                                               |
+|---------------|---------|--------|---------------------------------------------------------------------------|
+| `case_id`     | bigint  | number | Internal ID for each case template                                        |
+| `case_key`    | text    | string | Identifier for each case (e.g., `"adnexitis"`, `"ectopic_pregnancy"`)     |
+| `case_data`   | jsonb   | json   | JSON object containing all case-specific parameters                       |
+
+![](./Images/3_2_2_case_templates.jpg)
 
 ### Case Data Structure (applies to all cases)
 
@@ -20,7 +22,7 @@ The `case_data` field in `CaseTemplates` is a nested JSON object that contains p
 
 Here is a simplified structure overview:
 ```
-case_data
+`case_data`
 ├── case_id
 ├── internal_name
 ├── sc_key
@@ -30,6 +32,7 @@ case_data
 ├── gender
 ├── labs
 ├── findings
+│   ├── global
 │   ├── imaging
 │   │   ├── us
 │   │   ├── mri
@@ -54,7 +57,6 @@ case_data
 │   │   └── pre_existing_conditions
 │   └── menstruation
 ```
-
 ```mermaid
 graph TD 
     A(case_data) --> B(age) 
@@ -69,21 +71,22 @@ graph TD
     F1 --> F5(pre_existing_conditions) 
     F --> F6(menstruation) 
     A --> G(findings) 
-    G --> G1(imaging) 
-    G1 --> G11(us) 
-    G1 --> G12(mri) 
-    G1 --> G13(ct) 
-    G1 --> G14(xray) 
-    G --> G2(invasive_diagnostics) 
-    G2 --> G21(surgery) 
-    G2 --> G22(cytology_pathology) 
-    G --> G3(physical) 
-    G3 --> G31(abdominal) 
-    G3 --> G32(vaginal) 
-    G3 --> G33(breast) 
-    G --> G4(microbiology) 
-    G4 --> G41(urinalysis) 
-    G4 --> G42(vaginal_swab) 
+    A --> G1(global) 
+    G --> G2(imaging) 
+    G1 --> G21(us) 
+    G1 --> G22(mri) 
+    G1 --> G23(ct) 
+    G1 --> G24(xray) 
+    G --> G3(invasive_diagnostics) 
+    G2 --> G31(surgery) 
+    G2 --> G32(cytology_pathology) 
+    G --> G4(physical) 
+    G3 --> G41(abdominal) 
+    G3 --> G42(vaginal) 
+    G3 --> G43(breast) 
+    G --> G5(microbiology) 
+    G4 --> G51(urinalysis) 
+    G4 --> G52(vaginal_swab) 
     A --> H(cardinal_symptoms)
 ```
 

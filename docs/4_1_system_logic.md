@@ -3,24 +3,23 @@
 The logic of Clinic Edge is based on processing of static template data into dynamic, patient-specific cases and diagnostic reports. This process relies on several data bases including Supabasa tables, internal reference files and internal logic scripts. The data flow consists of multiple steps and interactions.
 
 ### 4.1 Data Flow 
-
 ```mermaid
 flowchart TD
  subgraph Templates["Templates (Static Source Data)"]
-        CT["CaseTemplates (case_data)"]
-        FT["FindingsTemplate"]
+        CT["CaseTemplates (case_data)"]:::supabase
+        FT["FindingsTemplate"]:::supabase
   end
  subgraph Reference_Data["Reference Data"]
-        NF["normalfindings_collection.js"]
-        LV["labvalues.js"]
+        NF["normalfindings_collection.js"]:::reference
+        LV["labvalues.js"]:::reference
   end
  subgraph Patient_Data["Patient Data"]
-        PB["PatBase (pat_data)"]
-        PR["PatReports"]
-        PC["PatChat"]
-        PDx["PatDiagnosis"]
-        PF["PatFindings"]
-        Rx["PatRx"]
+        PB["PatBase (pat_data)"]:::supabase
+        PR["PatReports"]:::supabase
+        PC["PatChat"]:::supabase
+        PDx["PatDiagnosis"]:::supabase
+        PF["PatFindings"]:::supabase
+        Rx["PatRx"]:::supabase
   end
     CT -- Case Generation --> PB
     PB --> PR
@@ -30,6 +29,11 @@ flowchart TD
     FT -- Template Logic --> PF
     PB -- Medication linked --> Rx
     CT --> NF & LV
+
+classDef supabase fill:#40cc8c,stroke:#000000,stroke-width:1px;
+classDef UI fill:#30acac,stroke:#000000,stroke-width:1px;
+classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
+classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
 Step 1: Case Selection via Cardinal Symptoms
