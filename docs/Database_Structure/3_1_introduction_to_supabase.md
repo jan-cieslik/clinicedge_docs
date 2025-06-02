@@ -1,6 +1,6 @@
-# 3.1 Introduction to Supabase
+# 3.1 Introduction to the PSQL Backend
 
-**Supabase** is used as the backend database for Clinic Edge. It consists of multiple tables for storage and management of data, including case data, patient data, and more. These tables and their associated data interact with each other and represent key components of the Clinic Edge workflow.
+**PSQL (Supabase)** is used as the backend database for Clinic Edge. It consists of multiple tables for storage and management of data, including case data, patient data, and more. These tables and their associated data interact with each other and represent key components of the Clinic Edge workflow.
 
 A brief overview of the tables is provided below, while more detailed descriptions are given in the respective subsections. For an explanation of how tables interact and data is processed, see [**Section 4. System Logic**](../4_1_system_logic.md).
 

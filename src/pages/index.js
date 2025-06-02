@@ -8,7 +8,7 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -28,13 +28,29 @@ function HomepageHeader() {
   );
 }
 
+function JustStarted() {
+  const { siteConfig } = useDocusaurusContext();
+  return (
+    <header className={clsx('hero', styles.heroBanner)}>
+      <div className="container">
+        <h1 className="hero__title">Kickoff</h1>
+        <p className="hero__subtitle">
+          CLINIC-EDGE is currently in closed alpha (as of June 2025). Once we reach the beta stage, we’ll release the full source code under an open-source license. This site hosts our public documentation — it’s still in the early stages, so thanks for your patience as we build it out.
+        </p>
+
+
+      </div>
+    </header>
+  );
+}
+
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout>
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <JustStarted />
       </main>
     </Layout>
   );

@@ -104,7 +104,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/docs/ce/intro',
+                to: '/docs/1_0_documentation_overview',
               },
             ],
           },
