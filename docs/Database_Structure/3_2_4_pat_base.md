@@ -8,9 +8,9 @@ The `pat_data` contains all patient-specific findings and values in JSON format 
 
 | Column        | Format  | Type   | Description                                                               |
 |---------------|---------|--------|---------------------------------------------------------------------------|
-| `pat_id`     | bigint  | number | Internal ID for each generated patient case                                |
+| `pat_id`     | bigint   | number | Internal ID for each generated patient case                               |
 | `case_id`     | bigint  | number | Internal ID for each case template                                        |
-| `pat_data`   | jsonb   | json   | JSON object containing all generated patient-specific parameters           |
+| `pat_data`   | jsonb    | json   | JSON object containing all generated patient-specific parameters          |
 
 ![](./Images/3_2_4_pat_base_supabase.jpg)
 
