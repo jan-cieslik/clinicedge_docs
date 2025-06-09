@@ -6,7 +6,7 @@ These cardinal symptoms are displayed on the Clinic Edge landing page, where use
 
 ![](./Images/3_2_1_cardinal_symptoms_ce.jpg)
 
-### Table Structure
+## Table Structure
 
 The Clinic Edge landing page is built upon the `CardinalSymptoms` table in Supabase, which stores the underlying data to display the list of symptoms. This table stores metadata for each cardinal symptom, including a display title (`manifestation`) and an optional image, both defined in the `cs_data` JSON field. 
 
@@ -20,11 +20,12 @@ The structure of the table is as follows:
 
 ![](./Images/3_2_1_cardinal_symptoms_supabase.jpg)
 
-### Integration with CaseTemplates
+## Integration with CaseTemplates
 
-Each case in Clinic Edge is defined as a JSON object located in the `CaseTemplates` table in Supabase. For each case, cardinal symptoms are defined in the `cardinal_symptoms` array inside their `case_data`. This allows each symptom to be associated with multiple diagnoses and vice versa.
+Each case in Clinic Edge is defined as a JSON object located in the `CaseTemplates` table in Supabase. For each case, cardinal symptoms are defined in the `cardinal_symptoms` array inside their `case_data`. This allows each symptom to be associated with multiple diagnoses and vice versa. 
 
 For example, a case like `adnexitis` can be linked to a set of cardinal symptoms (e.g., abdominal pain, fever), while the same cardinal symptoms also appear across other diagnoses.
+
 
 Example from the `case_data` for `adnexitis`:
 ```json
@@ -35,7 +36,10 @@ Example from the `case_data` for `adnexitis`:
     "menstrual_disorder"
 ]
 ```
-### Data Flow
+
+For more details about the structure of the `case_data` in the `CaseTemplates` table, see  [**Section 3.2.2 CaseTemplates**](../3_2_2_case_templates.md).
+
+## Data Flow
 
 When a user selects a cardinal symptom on the landing page, Clinic Edge:
 1. Searches all cases within the `CaseTemplates` table that are associated with this cardinal symptom

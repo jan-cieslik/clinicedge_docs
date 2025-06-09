@@ -4,23 +4,25 @@ Clinic Edge offers the functionality to take the medical history of a patient vi
 
 ![](./Images/3_2_5_pat_chat_ce.jpg)
 
-### Table Structure
+## Table Structure
 
 | Column     | Format | Type   | Description                                                              |
 |------------|--------|--------|--------------------------------------------------------------------------|
 | `id`       | bigint | number | ?                                                                        |
 | `pat_id`   | bigint | number | Corresponding patient case (as in `PatBase`)                             |
 | `content`  | jsonb  | json   | Conversation content                                                     |
-| `audio`    | jsonb  | json   | Audio content if audio functionality is used (optional)                 |
+| `audio`    | jsonb  | json   | Audio content if audio functionality is used (optional)                  |
 
 Example `content`:
 ```json
 
 ```
 
-### Integration within the System
+## Integration within the System
 
-When a user initiates the patient chat, the system fetches patient data from `PatBase` and uses the AI model `xxx` to provide responses and run the conservation. The chat, including text and optionally audio, is recorded and stored in the `PatChat` table in Supabase. Each entry is linked to the corresponding patient via `pat_id`.
+When a user initiates the patient chat, the system fetches `pat_data` from `PatBase` and uses the AI model `xxx` to provide responses and run the conservation. The `pat_data` contains all patient-specific findings and values in JSON format and is generated from `case_data` within the `CaseTemplates` Table. For details on the structure and content of `pat_data`, see [**Section 3.2.4 PatBase**](../3_2_4_pat_base.md).
+
+The chat, including text and optionally audio, is recorded and stored in the `PatChat` table in Supabase. Each entry is linked to the corresponding patient via `pat_id`. 
 
 ```mermaid
 flowchart TD

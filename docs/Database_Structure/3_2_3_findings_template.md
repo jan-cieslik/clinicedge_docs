@@ -47,6 +47,8 @@ flowchart TD
     H --> H3[Subtype: breast_biopsy]
 ```
 
+To learn how categories and subcategories are defined and internally processed to render diagnostic reports based on the FindingsTemplate table described in this section, see [**Section 3.4.1 logic_server.js**](../3_4_1_logic_server.md), and [**Section 3.4.2 requests.js**](../3_4_2_requests.md).
+
 ### Template: Report Layout and Placeholders
 
 The `template` field provides the layout and language of the final report. It uses placeholders to define where and how parameters and values are dynamically injected based on `pat_data`.
@@ -93,6 +95,8 @@ Allgemein:
 Gute Bildqualität ohne Bewegungsartefakte
 $findings.common.pathology
 ```
+
+The logic that renders these reports is defined in [**Section 3.4.1 logic_server.js**](../3_4_1_logic_server.md) and [**Section 3.4.3 `logic.js`**](../3_4_3_logic.md).
 
 ### vars: Normal and Default Values
 

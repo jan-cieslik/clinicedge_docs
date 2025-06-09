@@ -17,7 +17,7 @@ classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
-### 3.5.1 `normalfindings_collection.js`
+## 3.5.1 `normalfindings_collection.js`
 
 This file contains written findings and probabilistically generated values for multiple diagnostic categories. 
 All entries are grouped by category keys, such as `"history"`, `"menstruation"`, `"microbiology"`, etc.
@@ -140,7 +140,7 @@ vitalRanges
 
 Normal findings can take the form of:
 
-##### 1. Static written normal findings
+### 1. Static written normal findings
 Predefined report text can be inserted into `pat_data` when `"normal"` is defined. 
 
 **Example:**
@@ -156,7 +156,7 @@ Predefined report text can be inserted into `pat_data` when `"normal"` is define
 }
 ```
 
-##### 2. Probabilistic value generation with singular constraint
+### 2. Probabilistic value generation with singular constraint
 Some values are generated based on defined probabilities. This allows the simulation of realistic clinical distributions for findings such as menstrual characteristics or pre-existing conditions.
 
 **Example:**
@@ -181,7 +181,7 @@ Some values are generated based on defined probabilities. This allows the simula
 
 One value will be selected based on the probabilities. The `"singular": true` flag ensures only one value from the set is selected.
 
-##### 3. Probabilistic value generation without singular constraint
+### 3. Probabilistic value generation without singular constraint
 The probabilistic model can also be used to without the `"singular": true` flag to generate multiple co-occurring findings, such as past surgeries or pre-existing conditions. Each entry has a chance of being included.
 
 **Example:**
@@ -203,7 +203,7 @@ The probabilistic model can also be used to without the `"singular": true` flag 
 ```
 Each entry has an independent chance of being selected. Probabilities in this file can reflect general prevalences.
 
-##### 4. Vitals: Value ranges
+#### 4. Vitals: Value ranges
 When "normal" is specified for vitals in `case_data`, values are randomly selected from predefined normal ranges. 
 
 **Example:**
@@ -218,7 +218,7 @@ When "normal" is specified for vitals in `case_data`, values are randomly select
 
 If `"temperature": "normal"` is specified in `case_data`, a value between 36.0 and 37.2 °C is randomly generated.
 
-#### 3.5.2 `labvalues.js`
+## 3.5.2 `labvalues.js`
 
 This file provides numeric normal reference ranges for laboratory values, including:
 - Gender-specific reference ranges (e.g., "m" and "w")

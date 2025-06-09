@@ -4,7 +4,7 @@ The `PatRx` table in Supabase stores all prescriptions for each patient case. Ea
 
 ![](./Images/3_2_9_pat_rx_ce.jpg)
 
-### Table Structure
+## Table Structure
 
 | Column      | Format | Type   | Description                                                                 |
 |-------------|--------|--------|-----------------------------------------------------------------------------|
@@ -28,7 +28,7 @@ Example medication metadata:
 }
 ```
 
-### Integration within the System
+## Integration within the System
 
 Medications are added to the `PatRx` table using the `addRx` function in `logic_server.js`. Medication metadata includes `pzn` and `rx_key`, which are matched to `RMP_PZN` and `RMP_KEY` in the `bfarm_ref_med` table in Supabase. Each prescription is linked to the correct patient case via `pat_id`.
 

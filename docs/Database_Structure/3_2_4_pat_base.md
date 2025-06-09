@@ -4,7 +4,7 @@ The `PatBase` table in Supabase stores all dynamically and statically generated 
 
 The `pat_data` contains all patient-specific findings and values in JSON format and is generated from `case_data` within the `CaseTemplates` Table. It includes information such as age, gender, lab values, findings, vitals, medical history, and more. 
 
-### Table Structure
+## Table Structure
 
 | Column        | Format  | Type   | Description                                                               |
 |---------------|---------|--------|---------------------------------------------------------------------------|
@@ -19,7 +19,7 @@ Example `pat_data`:
 
 ```
 
-### Integration within the System
+## Integration within the System
 
 The `pat_data` serves as the basis for nearly all user interactions in a patient case. When a user performs an action, the system pulls the corresponding information from `pat_data`. 
 
