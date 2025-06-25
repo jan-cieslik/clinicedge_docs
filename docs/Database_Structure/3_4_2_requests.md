@@ -50,7 +50,7 @@ request_group
 ```
 
 Example:
-```json
+```js
 export const requestGroups = {
   laboratory: {
     items: ["labs", "virology", "microbiology"],
@@ -135,7 +135,7 @@ requestItems
 ```
 
 Example 1:
-```json
+```js
 export const requestItems = {
   labs: {
     form: {
@@ -154,7 +154,7 @@ export const requestItems = {
 ![](./Images/3_4_2_requestItems_1.jpg)
 
 Example 2:
-```json
+```js
   ct: {
     form: {
       ct_diagnosis: {

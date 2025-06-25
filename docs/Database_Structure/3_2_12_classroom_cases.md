@@ -6,15 +6,13 @@ The `classroom_cases` table in Supabase stores the cases, which are assigned to 
 
 | Column        | Format  | Type   | Description                                                               |
 |---------------|---------|--------|---------------------------------------------------------------------------|
-| `id`          | bigint  | number | Internal ID for each classroom case                               |
-| `classroom`   | bigint  | number | Contains IDs of the assigned classrooms                             |
-| `case_id`     | bigint  | number | Contains references to the associated case data in `CaseTemplates`         |
-| `internal_name`| text   | string | Name of each case          |
-| `internal_comment`| text   | string | Description of the case          |
+| `id`          | bigint  | number | Internal ID for each classroom case                                       |
+| `classroom`   | bigint  | number | Contains IDs of the assigned classrooms                                   |
+| `case_id`     | bigint  | number | Contains references to the associated case data in `CaseTemplates`        |
+| `internal_name`| text   | string | Name of each case                                                         |
+| `internal_comment`| text| string | Description of the case                                                   |
 
 ![](./Images/3_2_12_classroom_cases_supabase.png)
-
-
 
 ## Integration within the System
 

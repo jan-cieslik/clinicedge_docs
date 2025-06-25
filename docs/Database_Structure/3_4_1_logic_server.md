@@ -167,7 +167,7 @@ Adds or removes diagnoses (ICD-10 codes) from a patient's record and stores it i
 
 **How it can be modified:**  
 
-##### 8. `pushCaseTemplates`
+### 8. `pushCaseTemplates`
 
 **What it does:**  
 

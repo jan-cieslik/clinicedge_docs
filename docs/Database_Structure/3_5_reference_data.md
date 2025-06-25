@@ -32,7 +32,7 @@ normalfindings_collection
 └── vitalRanges
 ```
 
-``` mermaid
+```mermaid
 mindmap
   root((normalfindings_collection))
     microbiology

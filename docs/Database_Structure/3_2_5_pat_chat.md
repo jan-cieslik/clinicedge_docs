@@ -8,14 +8,20 @@ Clinic Edge offers the functionality to take the medical history of a patient vi
 
 | Column     | Format | Type   | Description                                                              |
 |------------|--------|--------|--------------------------------------------------------------------------|
-| `id`       | bigint | number | ?                                                                        |
+| `id`       | bigint | number | Unique ID of each statement (from the Patient/AI bot) or question (from the user)|
 | `pat_id`   | bigint | number | Corresponding patient case (as in `PatBase`)                             |
 | `content`  | jsonb  | json   | Conversation content                                                     |
 | `audio`    | jsonb  | json   | Audio content if audio functionality is used (optional)                  |
 
 Example `content`:
-```json
 
+User:
+```
+Nehmen Sie Medikamente?
+```
+Patient:
+```
+Nein, ich nehme keine Dauermedikation ein.
 ```
 
 ## Integration within the System
