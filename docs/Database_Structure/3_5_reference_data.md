@@ -1,9 +1,9 @@
 # 3.5 Reference Data
 
-If a field or value in `case_data` is defined as `"normal"` or blank, data is automatically retrieved from predefined reference files and injected into the into the dynamically generated `pat_data`.
+If a field or value in `case_data` is defined as `"normal"` or blank, data is automatically retrieved from predefined reference files and injected into the dynamically generated `pat_data`.
 
-1. `normalfindings_collection.json`: contains static written findings or probabilistically generated values for diagnostic categories such as microbiology, menstruation, history, and vitals
-2. `labvalues.json`: contains numeric reference ranges for laboratory values, optionally including gender and age stratification or multiple units
+1. `normalfindings_collection.js`: contains static written findings or probabilistically generated values for diagnostic categories such as microbiology, menstruation, history, and vitals
+2. `labvalues.js`: contains numeric reference ranges for laboratory values, optionally including gender and age stratification or multiple units
 
 ```mermaid
 flowchart TD
@@ -19,7 +19,7 @@ classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 
 ## 3.5.1 `normalfindings_collection.js`
 
-This file contains written findings and probabilistically generated values for multiple diagnostic categories. 
+ This file contains written findings and probabilistically generated values for multiple diagnostic categories and can be found under `./src/utils/logic/normalfindings_collection.js`. 
 All entries are grouped by category keys, such as `"history"`, `"menstruation"`, `"microbiology"`, etc.
 
 Here is a simplified structure overview:
@@ -224,6 +224,8 @@ This file provides numeric normal reference ranges for laboratory values, includ
 - Gender-specific reference ranges (e.g., "m" and "w")
 - Age-dependent values (e.g., "18-45", "46-100")
 - Support for multiple measurement units (e.g., "mg/dL", "µmol/L")
+
+It can be found under can be found under `./src/utils/logic/labvalues.js`.
 
 **Example: General range**
 ```json
