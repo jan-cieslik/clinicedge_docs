@@ -1,5 +1,7 @@
 # 3.2.13 `classroom_users`
 
+The `classroom_users` table in Supabase stores the IDs of users assigned to a classroom.
+
 ## Table Structure
 
 | Column        | Format  | Type   | Description                                                               |
@@ -9,7 +11,6 @@
 | `userid`   | text    | string   | ID of each user          |
 
 ![]()
-
 
 
 ## Integration within the System
