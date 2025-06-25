@@ -325,8 +325,8 @@ Another option is to only write reports about specific organs as shown below. Th
 }
 ```
 
-Normal values as well as normal findings do not have to be specified. They will be inserted as described in [**Section 3.2.3 `FindingsTemplate`**](../3_2_3_findings_template.md).
+Normal values as well as normal findings do not have to be specified. They will be inserted as described in [**Section 3.2.3 `FindingsTemplate`**](./3_2_3_findings_template.md).
 
 ##  How to Create a New Case
 
-To learn how to create your own static or dynamic case template, see the step-by-step guide in [**Section 5.1 How to Create a New Case**](../5_1_tutorial_case.md).
+To learn how to create your own static or dynamic case template, see the step-by-step guide in [**Section 5.1 How to Create a New Case**](../Tutorials/5_1_tutorial_case.md).

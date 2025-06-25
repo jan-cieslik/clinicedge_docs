@@ -20,7 +20,7 @@ Example `content`:
 
 ## Integration within the System
 
-When a user initiates the patient chat, the system fetches `pat_data` from `PatBase` and uses the AI model `xxx` to provide responses and run the conservation. The `pat_data` contains all patient-specific findings and values in JSON format and is generated from `case_data` within the `CaseTemplates` Table. For details on the structure and content of `pat_data`, see [**Section 3.2.4 PatBase**](../3_2_4_pat_base.md).
+When a user initiates the patient chat, the system fetches `pat_data` from `PatBase` and uses the AI model `xxx` to provide responses and run the conservation. The `pat_data` contains all patient-specific findings and values in JSON format and is generated from `case_data` within the `CaseTemplates` Table. For details on the structure and content of `pat_data`, see [**Section 3.2.4 PatBase**](./3_2_4_pat_base.md).
 
 The chat, including text and optionally audio, is recorded and stored in the `PatChat` table in Supabase. Each entry is linked to the corresponding patient via `pat_id`. 
 

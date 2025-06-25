@@ -37,7 +37,7 @@ Example from the `case_data` for `adnexitis`:
 ]
 ```
 
-For more details about the structure of the `case_data` in the `CaseTemplates` table, see  [**Section 3.2.2 CaseTemplates**](../3_2_2_case_templates.md).
+For more details about the structure of the `case_data` in the `CaseTemplates` table, see  [**Section 3.2.2 CaseTemplates**](./3_2_2_case_templates.md).
 
 ## Data Flow
 
