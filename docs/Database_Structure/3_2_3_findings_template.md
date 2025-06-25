@@ -8,7 +8,7 @@ Each available diagnostic request (`request_type`) is represented by one row. Ea
 
 | Column          | Format | Type   | Description                                                                          |
 |-----------------|--------|--------|--------------------------------------------------------------------------------------|
-| `id`            | bigint | number | ?                                                                                    |
+| `id`            | bigint | number | Unique ID of each template                                                           |
 | `request_group` | text   | string | Diagnostic group (e.g., `imaging`, `physical`, `microbiology`)                       |
 | `request_item`  | text   | string | Diagnostic modality or item type (e.g., `us`, `mri`)                                 |
 | `request_type`  | text   | string | Specific examination subtype (e.g., `us_tv`, `mri_abdomen`)                          |
@@ -19,7 +19,7 @@ Each available diagnostic request (`request_type`) is represented by one row. Ea
 
 ![](./Images/3_2_3_findings_template_supabase.jpg)
 
-``` mermaid
+```mermaid
 flowchart TD
     A[Request Group: imaging]:::group --> B[Request Item: us]
     A --> C[mri]

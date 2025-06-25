@@ -8,15 +8,16 @@ The `PatDiagnosis` table in Supabase stores the ICD-10 diagnoses assigned to a p
 |----------------|------------|------------|----------------------------------------------------------------------|
 | `id`           | bigint     | number     | Unique identifier for this diagnosis entry                           |
 | `pat_id`       | bigint     | number     | Corresponding patient case (as in `PatBase`)                         |
-| `diagnosis_id` | bigint     | number     | ICD-10 diagnosis code                                                |
+| `diagnosis_id` | bigint     | number     | Refers to the ICD-10 diagnosis code in the `ref_icd` table            |
 
 ![](./Images/3_2_6_pat_diagnosis_supabase.jpg)
 
 ## Integration within the System
-
+ 
 ```mermaid
 flowchart TD
     U["User assigns diagnosis"]:::UI -- executes function --> A["addDiagnosis"]:::logic
+    C[ref_icd Table]:::supabase -- ICD-10 codes are retrieved --> A  
     A -- stores diagnosis in --> B["PatDiagnosis Table"]:::supabase
     B <-- are connected via pat_id --> E["PatBase Table"]:::supabase
 
@@ -24,4 +25,4 @@ classDef UI fill:#30acac,stroke:#000000,stroke-width:1px;
 classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef supabase fill:#40cc8c,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
-``` 
+```

@@ -14,11 +14,14 @@ A brief overview of the tables is provided below, while more detailed descriptio
 | `PatDiagnosis`          | Contains diagnoses assigned to each patient                                  |
 | `PatFindings`           | Stores the findings requested for each patient case                          |
 | `PatReports`            | Stores rendered reports generated for each patient                           |
-| `PatRx`                 |                                                                              |
+| `PatRx`                 | Contains prescriptions assigned to patients                                  |
 | `all_cardinal_symptoms` |                                                                              |
-| `bfarm_ref_med`         | BfArM reference data for ...                                                 |
-| `bfarm_ref_pharm`       | BfArM reference data for ...                                                 |
-| `bfarm_ref_substance`   | BfArM reference data for ...                                                 |
-| `icd10`                 | ICD-10 diagnosis code reference table                                        |
+| `classroom_cases`       | Stores cases (via `case_id`) assigned to classrooms                          |
+| `classroom_users`       | Stores user IDs assigned to classrooms                                       |
+| `classrooms`            | Contains created classrooms                                                  |
+| `ref_icd`               | ICD-10 diagnosis code reference table                                        |
+| `ref_rx`                | BfArM reference data                                                         |
+
+
 
 
