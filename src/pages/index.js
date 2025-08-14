@@ -35,7 +35,8 @@ function JustStarted() {
       <div className="container">
         <h1 className="hero__title">Kickoff</h1>
         <p className="hero__subtitle">
-          CLINIC-EDGE is currently in closed alpha (as of June 2025). Once we reach the beta stage, we’ll release the full source code under an open-source license. This site hosts our public documentation — it’s still in the early stages, so thanks for your patience as we build it out.
+          CLINIC-EDGE has completed testing and is now publicly available on <a href="https://github.com/jan-cieslik/clinic_edge">GitHub</a>! <br/>
+          This site hosts our public documentation — it's still in the early stages, so thanks for your patience as we build it out.
         </p>
 
 
