@@ -63,3 +63,64 @@ Example:
 ```
 
 ## 2.2 Configure `normalfindings_collection.js`
+
+### 2.2.1 Add vitals 
+
+If you want to add new vitals, add the measurements to `vitalRanges` with the specific ranges, for example:
+
+```js
+"temperature": {
+    "unit": "°C",
+    "normal": [36.0, 37.2],
+    "fever": [38.0, 40.0],
+    "hypothermia": [34.0, 35.0],
+    "decimal_precision": 1
+}
+```
+
+Also add the vital to `vitalGroups`. 
+
+### 2.2.2 Configure `normalfindings_history`
+
+`normalfindings_history` contains normal findings that can occur in the patient history, more specific the general history and information about the menstruation of the patient. You can for example create additional `pre_existing_conditions` or another `cycle_length` with probabilities and also change the existing ones:
+
+```js
+"history": {
+    "general_history": {
+        "pre_existing_conditions": {
+            "common_pre_existing_conditions_women": {
+                "diabetes_mellitus_type_1": 0.05,
+                "diabetes_mellitus_type_2": 0.1,
+                "depression": 0.15,
+                "anxiety_disorder": 0.15,
+                "migraine": 0.1,
+                "iron_deficiency": 0.10,
+                "vitamin_d_deficiency": 0.25,
+                "nicotine_abuse": 0.20,
+                "uterine_myoma": 0.20,
+                "pcos": 0.10,
+                "endometriosis": 0.10,
+                "recurring_urinary_tract_infections": 0.1,
+                "autoimmune_disease": 0.1, 
+                "hypothyroidism": 0.1,
+                "hyperthyroidism": 0.05,
+                "hypertension": 0.25
+            }
+        }
+    },
+    "menstruation": {
+        "normal": {
+            "cycle_length": {
+                "21-24_days": 0.1,
+                "25-28_days": 0.4,
+                "29-32_days": 0.4,
+                "33-35_days": 0.09,
+                "36-40_days": 0.01,
+                "singular": true
+            }
+        }
+    }
+}
+```
+
+`"singular": true` ensures that only one option is selected for each patient.
