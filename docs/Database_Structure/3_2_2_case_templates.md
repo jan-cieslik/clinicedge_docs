@@ -169,18 +169,20 @@ Example Data:
     }
   },
   "findings": {
-    "us": {
-      "us_tv": {
-        "common": {
-          "free_fluid": 0.8
-        },
-        "ovary_l": {
-          "hydrosalpinx": 1,
-          "tuboovarian_abscess": 1
-        },
-        "ovary_r": {
-          "hydrosalpinx": 0.1,
-          "tuboovarian_abscess": 0.8
+    "imaging": {
+      "us": {
+        "us_tv": {
+          "common": {
+            "free_fluid": 0.8
+          },
+          "ovary_l": {
+            "hydrosalpinx": 1,
+            "tuboovarian_abscess": 1
+          },
+          "ovary_r": {
+            "hydrosalpinx": 0.1,
+            "tuboovarian_abscess": 0.8
+          }
         }
       }
     },
@@ -196,17 +198,21 @@ Example Data:
     },
     "physical": {
       "vaginal": {
-        "pelvic_pain": 0.8,
-        "adnexal_tenderness": 0.8,
-        "cervical_motion_tenderness": 0.95
-      },
-      "speculum": {
-        "purulent_discharge": 0.6
+        "palpation": {
+          "pelvic_pain": 0.8,
+          "adnexal_tenderness": 0.8,
+          "cervical_motion_tenderness": 0.95
+        },
+        "speculum": {
+          "purulent_discharge": 0.6
+        }
       },
       "abdominal": {
-        "guarding": 0.8,
-        "abdominal_pain": 0.8,
-        "abdominal_tension": 0.6
+        "palpation": {
+          "guarding": 0.8,
+          "abdominal_pain": 0.8,
+          "abdominal_tension": 0.6
+        }
       }
     },
     "microbiology": {

@@ -106,41 +106,48 @@ These can take the form of:
 
 1. Quantitative ranges with min and max values for randomization, e.g organ size:
 ```json
-  "uterus": {
+{ "uterus": {
     "depth": {
       "normal": {
         "max": 8,
         "min": 6.5
-      },
+      }
+    }
+  }
+}
 ```
 
 2. Categorical values for probabilistic selection, e.g uterus position: 
 ```json
-  "uterus": {
+{ "uterus": {
     "position": {
       "normal": {
         "av/af": 0.9,
         "retro": 0.1,
         "singular": true
-      },
+      }
+    }
+  }
+}
 ```
 
 The `singular: true` flag ensures only one item is selected per category (e.g., one uterus position).
 
 3. Normal or default descriptions, when no pathology is present, e.g.: 
 ```json
-  "bowel": {
+{  "bowel": {
     "description": {
       "normal": {
         "text": "Darmabschnitte in normaler Weite und Wanddicke, kein Hinweis auf Ileus oder entzündliche Prozesse."
       }
     }
-  },
+  }
+}
 ```
 
 Example `vars` from `mri_pelvic_whole`:
 ```json
-  "bowel": {
+{  "bowel": {
     "description": {
       "normal": {
         "text": "Darmabschnitte in normaler Weite und Wanddicke, kein Hinweis auf Ileus oder entzündliche Prozesse."
@@ -202,7 +209,8 @@ Example `vars` from `mri_pelvic_whole`:
         "text": "Uterus regelrecht konfiguriert mit homogenem Myometrium ohne fokalen Läsionen."
       }
     }
-  },
+  }
+}
 ```
 
 ### vars_path: Descriptions for Pathological Findings
@@ -211,7 +219,7 @@ The `vars_path` field maps each patient-specific finding in `pat_data` to a text
 
 Example `vars_path` from `mri_pelvic_whole`:
 ```json
-  "bowel": {
+{  "bowel": {
     "colon_endometriosis": "Infiltrative, signalalterierte Läsionen an Rektum und Sigma, vereinbar mit kolorektalen Endometrioseherden.",
     "colon_wall_thickening": "Segmentale Wandverdickung des Kolons, vereinbar mit entzündlicher Genese."
   },
@@ -223,7 +231,8 @@ Example `vars_path` from `mri_pelvic_whole`:
   },
   "lymph_nodes": {
     "pelvic_lymphadenopathy": "Multiple vergrößerte Lymphknoten im kleinen Becken, differenzialdiagnostisch reaktiv oder neoplastisch."
-  },
+  }
+}
 ```
 
 ## Integration within the System

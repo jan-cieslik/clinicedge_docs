@@ -1,4 +1,4 @@
-# How to Create a Classroom
+# 5.4 How to Create a Classroom
 
 Besides creating individual cases, Clinic Edge offers the functionality to create classrooms. A classroom can be used to group several existing cases, that you want to use for your upcoming seminar. This way, it is more manageable for your students to find the specific cases, they need to work on. You can see in the graphic below, how a classroom is depicted in the case overview in Clinic Edge.
 

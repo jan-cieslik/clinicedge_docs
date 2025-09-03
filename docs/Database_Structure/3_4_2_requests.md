@@ -148,7 +148,12 @@ export const requestItems = {
           },
           potassium: {
             type: "option",
-          },
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 ![](./Images/3_4_2_requestItems_1.jpg)
@@ -187,6 +192,10 @@ Example 2:
           },
           ct_thorax_abdomen: {
             type: "option",
-          },
+          }
+        }
+      }
+    }
+  }
 ```
 ![](./Images/3_4_2_requestItems_2.jpg)
