@@ -56,6 +56,8 @@ Here is a simplified structure overview:
 │   │   ├── surgeries
 │   │   └── pre_existing_conditions
 │   └── menstruation
+├── history"vignette"
+└── history"vignette_patient"
 ```
 ```mermaid
 graph TD 
