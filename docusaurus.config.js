@@ -136,6 +136,10 @@ const config = {
                 label: 'GitHub',
                 href: 'https://github.com/jan-cieslik/clinicedge_docs',
               },
+              {
+                label: 'Impressum',
+                href: '/impressum',
+              },
             ],
           },
         ],
