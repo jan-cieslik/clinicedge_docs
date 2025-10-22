@@ -12,11 +12,22 @@ sidebar_position: 2
 - **Dynamic cases** are based on predefined probabilistic templates that auto-generate case-specific findings, values, and symptoms.
 - **Static cases** are based on fixed values and reports, usually representing a typical presentation of a diagnosis.  These cases are especially useful for teaching purposes.
 
-All cases are stored as JSON files and managed through **Supabase**, the platform used as the backend database. 
+All cases are stored as JSON files and managed through **PSQL (Supabase)**, the platform used as the backend database. 
 
-**Core Features**:
-- Select patient cases by choosing a cardinal symptom (e.g. abdominal pain) on the landing page.
-- Modify or create your own cases and templates, including lab values, vitals, imaging, and history.
-- Request case-specific reports in real time using `FindingsTemplate`.
-- Chat with the patient to explore medical history using the AI-based chat option.
+## Key Functionalities
 
+### User Features
+
+- Select patient cases by choosing a cardinal symptom (e.g., abdominal pain) on the landing page
+- Order lab tests, imaging, and procedures to investigate the case
+- Receive auto-generated diagnostic reports in real time
+- Chat with the patient to explore medical history using the AI-based chat option
+- Assign ICD-10 diagnoses and prescriptions
+
+### Developer Features
+
+- Create or modify case templates (static or dynamic) to generate customized patient cases
+- Add or modify requests and examinations, including lab tests, imaging, and diagnostic procedures  
+- Customize probabilistic findings for lab values, vitals, imaging results, and clinical history  
+
+This documentation explains how Clinic Edge is structured, how it works, and how new cases or diagnostic tools can be added and configured.

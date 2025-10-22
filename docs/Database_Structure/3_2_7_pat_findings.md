@@ -4,7 +4,7 @@ The `PatFindings` table in Supabase contains all diagnostic findings requested b
 
 | Column          | Format | Type   | Description                                                                 |
 |-----------------|--------|--------|-----------------------------------------------------------------------------|
-| `id`            | bigint | number | ?                                                                           |
+| `id`            | bigint | number | Unique ID of each finding                                                   |
 | `pat_id`        | bigint | number | Corresponding patient case (as in `PatBase`)                                |
 | `request_id`    | bigint | number | ?                                                                           |
 | `request_group` | text   | string | Diagnostic group (e.g., `imaging`, `physical`, `microbiology`)              |
@@ -31,11 +31,11 @@ Example `data`:
 }
 ```
 
-### Integration within the System
+## Integration within the System
 
 When a user requests a diagnostic test (e.g., `us_tv`), the system first executes the `requestFinding` function, which then runs the `generateFinding` function in `logic_server.js`. The corresponding report template is fetched from the `FindingsTemplate` table in Supabase. Patient-specific findings are retrieved from `pat_data` in `PatBase`, and the findings and values are inserted into the report template as defined in `vars` and `vars_path` within the `FindingsTemplate` table. The final report is stored in the `PatFindings` table.
 
-``` mermaid
+```mermaid
 flowchart TD
     U["User requests finding"]:::UI -- executes --> A["requestFinding function"]:::logic
     A -- executes --> B["generateFinding function"]:::logic

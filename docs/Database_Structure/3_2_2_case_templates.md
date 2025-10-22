@@ -6,7 +6,7 @@ The table supports two types of cases:
 1. **Dynamic cases** are based on predefined probabilistic values and findings, that are generated randomly, when a user accesses a new patient case.
 2. **Static cases** are based on fixed values and reports, typically representing one specific presentation of a diagnosis. 
 
-### Table Structure
+## Table Structure
 
 | Column        | Format  | Type   | Description                                                               |
 |---------------|---------|--------|---------------------------------------------------------------------------|
@@ -16,7 +16,7 @@ The table supports two types of cases:
 
 ![](./Images/3_2_2_case_templates.jpg)
 
-### Case Data Structure (applies to all cases)
+## Case Data Structure (applies to all cases)
 
 The `case_data` field in `CaseTemplates` is a nested JSON object that contains patient demographics, findings, history, vitals, and other parameters and values. Hierarchy and categories are the same for both dynamic and static cases.
 
@@ -56,6 +56,8 @@ Here is a simplified structure overview:
 │   │   ├── surgeries
 │   │   └── pre_existing_conditions
 │   └── menstruation
+├── history"vignette"
+└── history"vignette_patient"
 ```
 ```mermaid
 graph TD 
@@ -169,18 +171,20 @@ Example Data:
     }
   },
   "findings": {
-    "us": {
-      "us_tv": {
-        "common": {
-          "free_fluid": 0.8
-        },
-        "ovary_l": {
-          "hydrosalpinx": 1,
-          "tuboovarian_abscess": 1
-        },
-        "ovary_r": {
-          "hydrosalpinx": 0.1,
-          "tuboovarian_abscess": 0.8
+    "imaging": {
+      "us": {
+        "us_tv": {
+          "common": {
+            "free_fluid": 0.8
+          },
+          "ovary_l": {
+            "hydrosalpinx": 1,
+            "tuboovarian_abscess": 1
+          },
+          "ovary_r": {
+            "hydrosalpinx": 0.1,
+            "tuboovarian_abscess": 0.8
+          }
         }
       }
     },
@@ -196,17 +200,21 @@ Example Data:
     },
     "physical": {
       "vaginal": {
-        "pelvic_pain": 0.8,
-        "adnexal_tenderness": 0.8,
-        "cervical_motion_tenderness": 0.95
-      },
-      "speculum": {
-        "purulent_discharge": 0.6
+        "palpation": {
+          "pelvic_pain": 0.8,
+          "adnexal_tenderness": 0.8,
+          "cervical_motion_tenderness": 0.95
+        },
+        "speculum": {
+          "purulent_discharge": 0.6
+        }
       },
       "abdominal": {
-        "guarding": 0.8,
-        "abdominal_pain": 0.8,
-        "abdominal_tension": 0.6
+        "palpation": {
+          "guarding": 0.8,
+          "abdominal_pain": 0.8,
+          "abdominal_tension": 0.6
+        }
       }
     },
     "microbiology": {
@@ -325,4 +333,8 @@ Another option is to only write reports about specific organs as shown below. Th
 }
 ```
 
-Normal values as well as normal findings do not have to be specified. They will be inserted as described in the section [Reference Data](./3_5_reference_data.md). 
+Normal values as well as normal findings do not have to be specified. They will be inserted as described in [**Section 3.2.3 `FindingsTemplate`**](./3_2_3_findings_template.md).
+
+##  How to Create a New Case
+
+To learn how to create your own static or dynamic case template, see the step-by-step guide in [**Section 5.1 How to Create a New Case**](../Tutorials/5_1_tutorial_case.md).

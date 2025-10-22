@@ -25,8 +25,11 @@ Please use the navbar on the left to access the pages we have already implemente
 #### 3.2.7 `PatFindings`
 #### 3.2.8 `PatReports`
 #### 3.2.9 `PatRx`
-#### 3.2.10 `bfarm_ref_med` / `bfarm_ref_pharm` / `bfarm_ref_substance`
-#### 3.2.11 `icd10`
+#### 3.2.10 `ref_rx`
+#### 3.2.11 `ref_icd`
+#### 3.2.12 `classroom_cases`
+#### 3.2.13 `classroom_users`
+#### 3.2.14 `classrooms`
 ### 3.3 Internal Files Overview
 ### 3.4 Logic Files
 #### 3.4.1  `logic_server.js`
@@ -47,6 +50,7 @@ Please use the navbar on the left to access the pages we have already implemente
 ### 5.1 How to Create a New Case
 ### 5.2 How to Create a New Examination Type
 ### 5.3 How to Customize Reference Data
+### 5.4 How to Create a Classroom
 
 ## 6. Appendices
 ### 6.1 FAQ

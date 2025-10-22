@@ -29,9 +29,9 @@ classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 
 These functions in `logic_server.js` rely on internal reference files such as `labvalues.js` and `normalfindings_collection.js`, and interact with functions from `logic.js`. For more details on system logic, and how data flows, see [**4.1 System Logic**](../4_1_system_logic.md).
 
-##### Key Functions
+## Key Functions
 
-##### 1. `requestLab`
+### 1. `requestLab`
 
 **What it does:**  
 Executes the generation of a lab value report using the `generateLabValues` function, when the user requests lab values
@@ -41,7 +41,7 @@ Executes the generation of a lab value report using the `generateLabValues` func
 
 **How it can be modified:**  
 
-##### 2. `generateLabValues`
+### 2. `generateLabValues`
 
 **What it does:**  
 Randomly generates lab values based on predefined ranges from `labvalues.js`
@@ -69,7 +69,7 @@ classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
-##### 3. `generateVitalValues`
+### 3. `generateVitalValues`
 
 **What it does:**  
 Generates realistic vital sign values (e.g., heart rate, temperature) using general or case-specific ranges.
@@ -97,7 +97,7 @@ classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
-##### 4. `requestFinding`
+### 4. `requestFinding`
 
 **What it does:**  
 Executes the generation of an examination report using the `generateFinding`function and saves it to `PatFindings`, when the user requests an examination
@@ -108,7 +108,7 @@ Executes the generation of an examination report using the `generateFinding`func
 
 **How it can be modified:**  
 
-##### 5. `generateFinding`
+### 5. `generateFinding`
 
 **What it does:**  
 Creates a written diagnostic report for an examination request (e.g. ultrasound or physical exam)
@@ -137,7 +137,7 @@ classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
-##### 6. `addRx`
+### 6. `addRx`
 
 **What it does:**  
 Stores medications for a patient in the `PatRx` Table via Supabase
@@ -157,7 +157,7 @@ classDef logic fill:#cc4078,stroke:#000000,stroke-width:1px;
 classDef reference fill:#8240cc,stroke:#000000,stroke-width:1px;
 ```
 
-##### 7. `addDiagnosis` & `removeDiagnosis`
+### 7. `addDiagnosis` & `removeDiagnosis`
 
 **What it does:**  
 Adds or removes diagnoses (ICD-10 codes) from a patient's record and stores it in `PatDiagnosis` via Supabase
@@ -167,7 +167,7 @@ Adds or removes diagnoses (ICD-10 codes) from a patient's record and stores it i
 
 **How it can be modified:**  
 
-##### 8. `pushCaseTemplates`
+### 8. `pushCaseTemplates`
 
 **What it does:**  
 
