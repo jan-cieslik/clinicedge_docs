@@ -10,9 +10,6 @@ The `classroom_users` table in Supabase stores the IDs of users assigned to a cl
 | `classroom`   | bigint  | number | Contains IDs of the assigned classrooms                                   |
 | `userid`      | text    | string | ID of each user                                                           |
 
-![]()
-
-
 ## Integration within the System
 
 ```mermaid
