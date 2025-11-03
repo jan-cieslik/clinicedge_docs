@@ -143,3 +143,9 @@ $findings.common.pathology
 ### 2.2 Define `vars` and `vars_path`
 
 After that, define `vars` for all relevant anatomical measurements or features (normal findings) and `vars_path` for all diagnosis-specific findings (cross-link with `case_data`).
+
+### 2.3 Add request conditions (*optional*)
+
+If the selection of the examination type you created is based on special conditions, you can add them to `request_condition` and add an order, in which the conditions should be checked. 
+
+![](../Database_Structure/Images/3_2_3_request_conditions.png)

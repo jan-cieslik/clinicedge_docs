@@ -13,6 +13,7 @@ A brief overview of the tables is provided below, while more detailed descriptio
 | `PatChat`               | Chat logs between user and patient                                           |
 | `PatDiagnosis`          | Contains diagnoses assigned to each patient                                  |
 | `PatFindings`           | Stores the findings requested for each patient case                          |
+| `PatHandover`           | Stores the handovers created by users                                        |
 | `PatReports`            | Stores rendered reports generated for each patient                           |
 | `PatRx`                 | Contains prescriptions assigned to patients                                  |
 | `all_cardinal_symptoms` |                                                                              |

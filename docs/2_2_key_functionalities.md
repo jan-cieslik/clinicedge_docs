@@ -9,14 +9,16 @@ This chapter presents the key functionalities step by step — from case selecti
 
 Users begin by selecting a **cardinal symptom** on the landing page (e.g., abdominal pain, fever, vaginal bleeding) to open and receive a new patient case.
 
+![](./Images/2_2_select_case.png)
+
 ## 2. Review the Case
 
 Once a case is loaded, users can review:
 - Basic information (e.g., age, sex)
 - Vitals (e.g., temperature, heart rate)
 
-*Screen recording placeholder*: 
-Selecting a cardinal symptom, new case is loaded, basic information is presented
+![](./Images/2_2_overview.png)
+
 
 ## 3. Chat with the Patient
 
@@ -25,8 +27,7 @@ To investigate the patient’s symptoms and clinical history, users can use the 
 - Medical history (e.g., pre-existing conditions, prior surgeries)  
 - Menstrual history  
 
-*Screen recording placeholder:*  
-AI chat preview
+![](./Images/2_2_chat_preview.png)
 
 ## 4. Request & Review Diagnostic Tests
 
@@ -36,22 +37,31 @@ Based on clinical interpreation, users can request relevant diagnostic tests and
 - Imaging (e.g., ultrasound, MRI, CT, X-ray)  
 - Invasive diagnostics (e.g., laparoscopy, biopsy, hysteroscopy, cytopathology)
 
+![](./Images/2_2_request_imaging.png)
+
 Each request returns auto-generated results, including:
 - Lab values 
 - Microbiology results  
 - Written diagnostic reports for imaging and and other diagnostic procedures
 
-*Screen recording placeholder*: 
-Request labs, imaging, and view corresponding result reports
+![](./Images/2_2_show_results.png)
 
 ## 5. Assign Diagnosis & Prescriptions
 
 Once enough information has been gathered, users can:
 - Assign **ICD-10 diagnoses**
+
+![](./Images/2_2_diagnoses.png)
+
 - Add **prescriptions**
 
-*Screen recording placeholder:*  
-Selecting diagnosis and prescriptions
+![](./Images/2_2_prescriptions.png)
+
+## 6. Finish Case
+
+Users can hand over a summary of the case to a "supervisor". When everything is done, the case can be finished. Afterwards, no changes can be made anymore. 
+
+![](./Images/2_2_finish_case.png)
 
 ## Summary 
 
