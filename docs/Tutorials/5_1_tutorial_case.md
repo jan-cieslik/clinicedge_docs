@@ -14,7 +14,7 @@ In the following you can see an axample:
 
 ```json
 {
-  "vignette": "Sie arbeiten in der gynäkologischen Ambulanz des UKDs. Frau $name_last ($gender, $age) wird bei Ihnen vorstellig mit Schmerzen und Druckgefühl im Unterbauch und Becken und einer abdominalen Umfangszunahme seit mehreren Wochen.\n\n **Vitalzeichen**: \n\n Puls: $vitals.values.heart_rate/min \n\n Atemfrequenz: $vitals.values.respiratory_rate/min \n\n RR $vitals.values.blood_pressure_systolic/$vitals.values.blood_pressure_diastolic mmHg \n\n Temperatur: $vitals.values.temperature°C"
+  "vignette": "Sie arbeiten in der gynäkologischen Ambulanz des UKDs. $salutation $name_last ($gender, $age) wird bei Ihnen vorstellig mit Schmerzen und Druckgefühl im Unterbauch und Becken und einer abdominalen Umfangszunahme seit mehreren Wochen.\n\n **Vitalzeichen**: \n\n Puls: $vitals.values.heart_rate/min \n\n Atemfrequenz: $vitals.values.respiratory_rate/min \n\n RR $vitals.values.blood_pressure_systolic/$vitals.values.blood_pressure_diastolic mmHg \n\n Temperatur: $vitals.values.temperature°C"
 }
 ```
 
@@ -26,11 +26,19 @@ You can also add a `vignette_patient`, for example:
 
 ```json
 {
-  "vignette_patient": "Sie sind Frau $name_last, $age Jahre alt und haben Schmerzen und ein Druckgefühl im Unterbauch. Ihr Bauchumfang hat seit mehreren Wochen zugenommen. "
+  "vignette_patient": "Sie sind $salutation $name_last, $age Jahre alt und haben Schmerzen und ein Druckgefühl im Unterbauch. Ihr Bauchumfang hat seit mehreren Wochen zugenommen."
 }
 ```
 
 This information will be used by the Chatbot, which acts as the patient in the anamnesis chat.
+
+The third type, the `vignette_evaluation`, is a sample solution of the handover, which will be shown, when a case was finished by the user. An example is shown below:
+
+```json
+{
+  "vignette_evaluation": "Verdacht auf akute Pyelonephritis in der Schwangerschaft (Fieber, Flankenschmerz, positive Urinbefunde). Empfohlenes Vorgehen: stationäre Aufnahme, i.v.-Flüssigkeitssubstitution, Abnahme von Urin- und Blutkulturen und sofortiger Beginn einer empirischen i.v.-Antibiose (z. B. Ceftriaxon je nach Leitlinie), Analgesie und Antipyrese, engmaschige Labor‑(Entzündungsparameter, Nierenwerte) und fetale Überwachung"
+}
+```
 
 ### 3. Add vars_path entries
 
