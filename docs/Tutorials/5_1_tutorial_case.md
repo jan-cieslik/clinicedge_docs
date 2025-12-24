@@ -6,11 +6,12 @@ Add a JSON case to [`CaseTemplates`](../Database_Structure/3_2_2_case_templates.
   - Assign a new `case_id`.
   - Choose the type of your case (dynamic/static). An overview of the differences can be found [here](../Database_Structure/3_2_2_case_templates.md).
   - Define age, gender, labs, vitals, history, findings and cardinal_symptoms.
+  - Add a `config`, which defines which requests are available for this case. This step is optional.
 
 ### 2. Add a `vignette`
 
 A `vignette` is a brief description of the case, which will appear on the landing page. you an add the `vignette` to the JSON case in `CaseTemplates` as you added the age, history etc. 
-In the following you can see an axample:
+In the following you can see an example:
 
 ```json
 {

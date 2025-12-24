@@ -11,7 +11,7 @@ The table supports two types of cases:
 | Column        | Format  | Type   | Description                                                               |
 |---------------|---------|--------|---------------------------------------------------------------------------|
 | `case_id`     | bigint  | number | Internal ID for each case template                                        |
-| `case_key`    | text    | string | Identifier for each case (e.g., `"adnexitis"`, `"ectopic_pregnancy"`)     |
+| `internal_name`| text    | string | Identifier for each case (e.g., `"adnexitis"`, `"ectopic_pregnancy"`)     |
 | `case_data`   | jsonb   | json   | JSON object containing all case-specific parameters                       |
 
 ![](./Images/3_2_2_case_templates.jpg)
@@ -31,20 +31,22 @@ Here is a simplified structure overview:
 ├── age
 ├── gender
 ├── labs
+├── config
 ├── findings
 │   ├── global
 │   ├── imaging
 │   │   ├── us
 │   │   ├── mri
 │   │   ├── ct
+│   │   ├── ctg
+│   │   ├── ecg
 │   │   └── xray
 │   ├── invasive_diagnostics
 │   │   ├── surgery
+│   │   ├── biopsy
 │   │   └── cytology_pathology
-│   ├── physical
-│   │   ├── abdominal
-│   │   ├── vaginal
-│   │   └── breast
+│   ├── general
+│   │   └── physical
 │   ├── microbiology
 │   │   ├── urinalysis
 │   │   └── vaginal_swab
@@ -59,8 +61,9 @@ Here is a simplified structure overview:
 │   │   ├── pre_existing_conditions
 │   │   └── family_history
 │   └── menstruation
-├── history"vignette"
-└── history"vignette_patient"
+├── vignette
+├── vignette_patient
+└── vignette_evaluation
 ```
 ```mermaid
 graph TD 
@@ -86,17 +89,18 @@ graph TD
     G2 --> G22(mri) 
     G2 --> G23(ct) 
     G2 --> G24(xray) 
+    G2 --> G25(ctg) 
+    G2 --> G26(ecg) 
     G --> G3(invasive_diagnostics) 
     G3 --> G31(surgery) 
     G3 --> G32(cytology_pathology) 
-    G --> G4(physical) 
-    G4 --> G41(abdominal) 
-    G4 --> G42(vaginal) 
-    G4 --> G43(breast) 
+    G --> G4(general) 
+    G4 --> G41(physical)  
     G --> G5(microbiology) 
     G5 --> G51(urinalysis) 
     G5 --> G52(vaginal_swab) 
     A --> H(cardinal_symptoms)
+    A --> I(config)
 ```
 
 ### Dynamic Cases
@@ -114,6 +118,7 @@ Dynamic case files are stored as separate JSON files, and transferred into a sin
   - `findings`: imaging, surgery, physical exam, microbiology, etc.
   - `history`: pre-existing conditions, surgeries, menstrual cycle, etc. 
   - `cardinal_symptoms`: key symptoms like fever, abdominal pain, etc.
+  - `config`: set of available requests for this case
 
 Each case is assigned a `case_id` (e.g., `1 = adnexitis`). Data under findings need to follow the same structure as in `src/utils/logic/requests.js` e.g. "imaging" -> "us" -> "us_tv". 
 
@@ -136,6 +141,17 @@ Example Data:
     "leukocytes": {
       "max": 20,
       "min": 14
+    }
+  },
+  "config": {
+    "request_whitelist": {
+      "imaging": [
+        "ctg",
+        "us"
+      ],
+      "laboratory": [
+        "labs"
+      ]
     }
   },
   "gender": [
@@ -196,10 +212,10 @@ Example Data:
       }
     },
     "surgery": {
-      "hsk": {
+      "hsc": {
         "inflammation": 0.9
       },
-      "lsk": {
+      "lsc": {
         "adhesions": 0.5,
         "inflammation": 0.9,
         "tuboovarian_abscess": 0.2

@@ -187,20 +187,40 @@ An overview of the available requests is found in the following table.
 
 | Request Groups          | Request Items         | Options                                                                                                   |
 |-------------------------|-----------------------|-----------------------------------------------------------------------------------------------------------|
-| `"laboratory"`          | `"labs"`              | Overview in the file [lab_value_overview.pdf](./files/lab_value_overview.pdf)                                                             |
-|                         | `"microbiology""`     | `"urine_culture"`, `"vaginal_swab"`                                                                       |  
-|                         | `"bloodbank"`         | `"blood_group"`, `"blood_antibodies"` (Antibody Screening)                                                |
+| `"laboratory"`          | `"labs"`              | Overview in the file [lab_value_overview.pdf](./files/lab_value_overview.pdf)        |
+|                         | `"microbiology""`     | `"urine_culture"`, `"vaginal_swab"`                    |  
+|                         | `"bloodbank"`         | `"blood_group"`, `"blood_antibodies"` (Antibody Screening)   |
 | `"imaging"`             | `"mri"`               | `"mri_skull_whole"`, `"mri_skull_brainstem"`, `"mri_skull_pituitary"`, `"mri_skull_orbital"`, `"mri_thorax_whole"`, `"mri_thorax_heart"`, `"mri_abdomen_whole"`, `"mri_abdomen_liver"`, `"mri_abdomen_pancreas"`, `"mri_abdomen_spleen"`, `"mri_mamma_whole"`, `"mri_pelvic_whole"`|
 |                         | `"ct"`                | `"ct_skull_whole"`, `"ct_skull_stroke"`, `"ct_thorax_abdomen"`, `"ct_thorax_whole"`, `"ct_abdomen_whole"` |
 |                         | `"us"`                | `"us_abdominal"`, `"us_abdominal_preg"`, `"us_tv"`, `"us_rectal"`, `"us_mamma"`, `"us_tte"` (Transthoracic Echo), `"us_tee"` (Transesophageal Echo)   |
-|                         | `"xray"`              | `"xray_skull"`, `"xray_thorax"`, `"xray_abdomen"`                                                         |
-|                         | `"ctg"`               | `"ctg_regular"`                                                                                           |
-|                         | `"ecg"`               | `"ecg_regular"`                                                                                           |
-| `"invasive_diagnostics"`| `"surgery"`           | `"hsc"` (Hysteroscopy), `"lsc"` (Laparoscopy), `"colposcopy"`                                             |
+|                         | `"xray"`              | `"xray_skull"`, `"xray_thorax"`, `"xray_abdomen"`                  |
+|                         | `"ctg"`               | `"ctg_regular"`                                       |
+|                         | `"ecg"`               | `"ecg_regular"`                      |
+| `"invasive_diagnostics"`| `"surgery"`           | `"hsc"` (Hysteroscopy), `"lsc"` (Laparoscopy), `"colposcopy"`    |
 |                         | `"cytology_pathology"`| `"pap_smear"`, `"hpv_test"`, `"breast_biopsy"`, `"cervical_biopsy"`, `"endometrial_biopsy"`, `"ovarian_biopsy"`, `"vulvar_biopsy"`|
 |                         | `"biopsy"`            | `"breast_us"` (Breastbiopsy - Sonographic), `"breast_mamm"` (Breastbiopsy - Mammographic), `"breast_mri"` (Breastbiopsy - MRI-guided) |
 
-### 5. Add a `vignette`
+### 5. Add a `config`
+
+Add a `config`, in which you can define which requests are available for this case. This step is optional. An example is shown here:
+
+```json
+{
+  "config": {
+    "request_whitelist": {
+      "imaging": [
+        "ctg",
+        "us"
+      ],
+      "laboratory": [
+        "labs"
+      ]
+    }
+  },
+}
+```
+
+### 6. Add a `vignette`
 
 A `vignette` is a brief description of the case, which will appear on the landing page. you an add the `vignette` to the JSON case in `CaseTemplates` as you added the age, history etc. 
 In the following you can see an axample:
@@ -229,7 +249,7 @@ The third type, the `vignette_evaluation`, is a sample solution of the handover,
 }
 ```
 
-### 6. Add `cardinal_symptoms`
+### 7. Add `cardinal_symptoms`
 
 To add the cardinal symptoms of your case, use the following structure:
 
