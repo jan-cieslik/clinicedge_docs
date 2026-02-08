@@ -16,8 +16,10 @@ Each available diagnostic request (`request_type`) is represented by one row. Ea
 | `template`      | text   | string | Report layout                                                                        |     
 | `vars`          | jsonb  | json   | Definitions for normal values, sizes, positions, and default descriptions            |  
 | `vars_path`     | jsonb  | json   | Definitions for textual descriptions of pathological findings                        |  
+| `request_condition` | text   | string | Conditions, which are checked when selecting a finding template                  |
+| `request_condition_order`| smallint   | number | Specifies the order of the conditions                                   |
 
-![](./Images/3_2_3_findings_template_supabase.jpg)
+![](./Images/3_2_3_findings_template_supabase.png)
 
 ```mermaid
 flowchart TD
@@ -138,7 +140,7 @@ The `singular: true` flag ensures only one item is selected per category (e.g., 
 {  "bowel": {
     "description": {
       "normal": {
-        "text": "Darmabschnitte in normaler Weite und Wanddicke, kein Hinweis auf Ileus oder entzündliche Prozesse."
+        "static_value": "Darmabschnitte in normaler Weite und Wanddicke, kein Hinweis auf Ileus oder entzündliche Prozesse."
       }
     }
   }
@@ -150,14 +152,14 @@ Example `vars` from `mri_pelvic_whole`:
 {  "bowel": {
     "description": {
       "normal": {
-        "text": "Darmabschnitte in normaler Weite und Wanddicke, kein Hinweis auf Ileus oder entzündliche Prozesse."
+        "static_value": "Darmabschnitte in normaler Weite und Wanddicke, kein Hinweis auf Ileus oder entzündliche Prozesse."
       }
     }
   },
   "cervix": {
     "description": {
       "normal": {
-        "text": "Zervix regelrecht konfiguriert, kein Hinweis auf Stenose."
+        "static_value": "Zervix regelrecht konfiguriert, kein Hinweis auf Stenose."
       }
     }
   },
@@ -206,7 +208,7 @@ Example `vars` from `mri_pelvic_whole`:
     },
     "description": {
       "normal": {
-        "text": "Uterus regelrecht konfiguriert mit homogenem Myometrium ohne fokalen Läsionen."
+        "static_value": "Uterus regelrecht konfiguriert mit homogenem Myometrium ohne fokalen Läsionen."
       }
     }
   }
@@ -234,6 +236,12 @@ Example `vars_path` from `mri_pelvic_whole`:
   }
 }
 ```
+
+### Request Conditions
+
+A request condition can be added if the selection of a finding template differs by this special condition, for example the pregnancy week. As you can see in the graphic below, three different templates for cardiotocography were added. The selection of the right template is based on the order of the conditions and the conditions themselves. In this example, it would be checked first, if the patient is at least 24 weeks pregnant. If this condition is satisfied, the template is selected and other conditions won't be checked anymore. If the first condition is not satisfied, the second condition is checked. This continues until the template with no given condition is reached and selected, if no other template gets chosen before. 
+
+![](./Images/3_2_3_request_conditions.png)
 
 ## Integration within the System
 

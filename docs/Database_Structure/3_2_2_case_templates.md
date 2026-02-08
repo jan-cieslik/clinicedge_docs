@@ -51,10 +51,13 @@ Here is a simplified structure overview:
 ├── vitals
 ├── history
 │   ├── general_history
+│   │   ├── allergies
+│   │   ├── intolerances
 │   │   ├── height
 │   │   ├── bmi
 │   │   ├── surgeries
-│   │   └── pre_existing_conditions
+│   │   ├── pre_existing_conditions
+│   │   └── family_history
 │   └── menstruation
 ├── history"vignette"
 └── history"vignette_patient"
@@ -70,25 +73,29 @@ graph TD
     F1 --> F2(height) 
     F1 --> F3(bmi) 
     F1 --> F4(surgeries) 
-    F1 --> F5(pre_existing_conditions) 
-    F --> F6(menstruation) 
+    F1 --> F5(pre_existing_conditions)
+    F1 --> F6(allergies) 
+    F1 --> F7(intolerances)   
+    F --> F8(menstruation)
+    F --> F9(family_history)
+    F --> F10(pregnancy)
     A --> G(findings) 
     A --> G1(global) 
     G --> G2(imaging) 
-    G1 --> G21(us) 
-    G1 --> G22(mri) 
-    G1 --> G23(ct) 
-    G1 --> G24(xray) 
+    G2 --> G21(us) 
+    G2 --> G22(mri) 
+    G2 --> G23(ct) 
+    G2 --> G24(xray) 
     G --> G3(invasive_diagnostics) 
-    G2 --> G31(surgery) 
-    G2 --> G32(cytology_pathology) 
+    G3 --> G31(surgery) 
+    G3 --> G32(cytology_pathology) 
     G --> G4(physical) 
-    G3 --> G41(abdominal) 
-    G3 --> G42(vaginal) 
-    G3 --> G43(breast) 
+    G4 --> G41(abdominal) 
+    G4 --> G42(vaginal) 
+    G4 --> G43(breast) 
     G --> G5(microbiology) 
-    G4 --> G51(urinalysis) 
-    G4 --> G52(vaginal_swab) 
+    G5 --> G51(urinalysis) 
+    G5 --> G52(vaginal_swab) 
     A --> H(cardinal_symptoms)
 ```
 

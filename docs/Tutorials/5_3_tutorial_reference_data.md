@@ -82,7 +82,7 @@ Also add the vital to `vitalGroups`.
 
 ### 2.2.2 Configure `normalfindings_history`
 
-`normalfindings_history` contains normal findings that can occur in the patient history, more specific the general history and information about the menstruation of the patient. You can for example create additional `pre_existing_conditions` or another `cycle_length` with probabilities and also change the existing ones:
+`normalfindings_history` contains normal findings that can occur in the patient history, more specific the general history, the family history and information about the menstruation of the patient and pregnancies. You can for example create additional `pre_existing_conditions` or another `cycle_length` with probabilities and also change the existing ones:
 
 ```js
 "history": {

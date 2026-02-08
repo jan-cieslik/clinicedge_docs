@@ -30,6 +30,7 @@ Please use the navbar on the left to access the pages we have already implemente
 #### 3.2.12 `classroom_cases`
 #### 3.2.13 `classroom_users`
 #### 3.2.14 `classrooms`
+#### 3.2.15 `PatHandover`
 ### 3.3 Internal Files Overview
 ### 3.4 Logic Files
 #### 3.4.1  `logic_server.js`
