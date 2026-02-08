@@ -6,25 +6,70 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #2ba8ac;
+  --ifm-color-primary-dark: #247579;
+  --ifm-color-primary-darker: #1f8588;
+  --ifm-color-primary-darkest: #1a6d71;
+  --ifm-color-primary-light: #3ab8bc;
+  --ifm-color-primary-lighter: #4dc2c6;
+  --ifm-color-primary-lightest: #7dd7d9;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(43, 168, 172, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #4dc2c6;
+  --ifm-color-primary-dark: #3ab8bc;
+  --ifm-color-primary-darker: #2ba8ac;
+  --ifm-color-primary-darkest: #247579;
+  --ifm-color-primary-light: #6ecfd0;
+  --ifm-color-primary-lighter: #7dd7d9;
+  --ifm-color-primary-lightest: #a8e2e4;
+  --docusaurus-highlighted-code-line-bg: rgba(43, 168, 172, 0.2);
 }
+
+/* Custom accent colors for links and highlights */
+a {
+  color: #2ba8ac;
+}
+
+a:hover {
+  color: #1f8588;
+}
+
+/* Button styling */
+.button.button--primary {
+  background-color: #2ba8ac;
+}
+
+.button.button--primary:hover {
+  background-color: #1f8588;
+}
+
+/* Card styling for better visual hierarchy */
+.card {
+  box-shadow: 0 2px 8px rgba(43, 168, 172, 0.1);
+}
+
+/* Sidebar styling */
+.sidebar-inner {
+  background-color: #f8fafb;
+}
+
+.sidebar-item-link {
+  color: #2c3e50;
+}
+
+.sidebar-item-link.sidebar-item-link--active {
+  color: #2ba8ac;
+  border-left-color: #2ba8ac;
+}
+
+/* Code block styling */
+:not(pre) > code[class*='language-'] {
+  background-color: rgba(43, 168, 172, 0.1);
+  color: #1f8588;
+}
+
+
