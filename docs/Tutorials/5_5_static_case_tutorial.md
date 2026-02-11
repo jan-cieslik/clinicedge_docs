@@ -204,7 +204,7 @@ An overview of the available requests is found in the following table.
 
 ### 5. Add a `config`
 
-Add a `config`, in which you can define which requests are available for this case. This step is optional. An example is shown here:
+Add a `config`, in which you can define which requests are available for this case (`request_whitelist`) or which parts of the case can be configurated by the user (`designer`). This step is optional. An example is shown here:
 
 ```json
 {
@@ -217,6 +217,11 @@ Add a `config`, in which you can define which requests are available for this ca
       "laboratory": [
         "labs"
       ]
+    },
+    "designer": {
+      "chat": true,
+      "general": true,
+      "vignettes": true
     }
   },
 }

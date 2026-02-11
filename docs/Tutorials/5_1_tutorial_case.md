@@ -6,7 +6,7 @@ Add a JSON case to [`CaseTemplates`](../Database_Structure/3_2_2_case_templates.
   - Assign a new `case_id`.
   - Choose the type of your case (dynamic/static). An overview of the differences can be found [here](../Database_Structure/3_2_2_case_templates.md).
   - Define age, gender, labs, vitals, history, findings and cardinal_symptoms.
-  - Add a `config`, which defines which requests are available for this case. This step is optional.
+  - Add a `config`, which defines various configurations. This step is optional.
 
 ### 2. Add a `vignette`
 

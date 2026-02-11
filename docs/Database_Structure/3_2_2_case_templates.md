@@ -118,7 +118,7 @@ Dynamic case files are stored as separate JSON files, and transferred into a sin
   - `findings`: imaging, surgery, physical exam, microbiology, etc.
   - `history`: pre-existing conditions, surgeries, menstrual cycle, etc. 
   - `cardinal_symptoms`: key symptoms like fever, abdominal pain, etc.
-  - `config`: set of available requests for this case
+  - `config`: set of available requests and other configurations for this case
 
 Each case is assigned a `case_id` (e.g., `1 = adnexitis`). Data under findings need to follow the same structure as in `src/utils/logic/requests.js` e.g. "imaging" -> "us" -> "us_tv". 
 
