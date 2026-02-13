@@ -1,0 +1,798 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "age",
+    "labs",
+    "gender",
+    "vitals",
+    "history",
+    "findings",
+    "vignette",
+    "internal_name",
+    "vignette_patient",
+    "vignette_evaluation"
+  ],
+  "properties": {
+    "age": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        }
+      }
+    },
+    "labs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "afp": {
+          "$ref": "#/$defs/labRange"
+        },
+        "afp_mom": {
+          "$ref": "#/$defs/labRange"
+        },
+        "albumin": {
+          "$ref": "#/$defs/labRange"
+        },
+        "alt": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ama": {
+          "$ref": "#/$defs/labRange"
+        },
+        "amh": {
+          "$ref": "#/$defs/labRange"
+        },
+        "amylase": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ana": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ap": {
+          "$ref": "#/$defs/labRange"
+        },
+        "aptt": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ast": {
+          "$ref": "#/$defs/labRange"
+        },
+        "atIII": {
+          "$ref": "#/$defs/labRange"
+        },
+        "band_neutrophils": {
+          "$ref": "#/$defs/labRange"
+        },
+        "basophils": {
+          "$ref": "#/$defs/labRange"
+        },
+        "beta_hcg": {
+          "$ref": "#/$defs/labRange"
+        },
+        "bileacids": {
+          "$ref": "#/$defs/labRange"
+        },
+        "bilirubin_direct": {
+          "$ref": "#/$defs/labRange"
+        },
+        "bilirubin_total": {
+          "$ref": "#/$defs/labRange"
+        },
+        "bnp": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ca_125": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ca_15_3": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ca_19_9": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ca_72_4": {
+          "$ref": "#/$defs/labRange"
+        },
+        "calcium_total": {
+          "$ref": "#/$defs/labRange"
+        },
+        "cea": {
+          "$ref": "#/$defs/labRange"
+        },
+        "chloride": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ck": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ck_mb": {
+          "$ref": "#/$defs/labRange"
+        },
+        "creatinine": {
+          "$ref": "#/$defs/labRange"
+        },
+        "crp": {
+          "$ref": "#/$defs/labRange"
+        },
+        "d_dimer": {
+          "$ref": "#/$defs/labRange"
+        },
+        "dhea": {
+          "$ref": "#/$defs/labRange"
+        },
+        "eosinophils": {
+          "$ref": "#/$defs/labRange"
+        },
+        "erythrocytes": {
+          "$ref": "#/$defs/labRange"
+        },
+        "estradiol": {
+          "$ref": "#/$defs/labRange"
+        },
+        "fasting_glucose": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ferritin": {
+          "$ref": "#/$defs/labRange"
+        },
+        "fibrinogen": {
+          "$ref": "#/$defs/labRange"
+        },
+        "fsh": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ft3": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ft4": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ggt": {
+          "$ref": "#/$defs/labRange"
+        },
+        "haemoglobin": {
+          "$ref": "#/$defs/labRange"
+        },
+        "haptoglobin": {
+          "$ref": "#/$defs/labRange"
+        },
+        "hba1c": {
+          "$ref": "#/$defs/labRange"
+        },
+        "hco3": {
+          "$ref": "#/$defs/labRange"
+        },
+        "hdl": {
+          "$ref": "#/$defs/labRange"
+        },
+        "hematocrit": {
+          "$ref": "#/$defs/labRange"
+        },
+        "inr": {
+          "$ref": "#/$defs/labRange"
+        },
+        "iron": {
+          "$ref": "#/$defs/labRange"
+        },
+        "lactate_blood": {
+          "$ref": "#/$defs/labRange"
+        },
+        "lactate_liquor": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ldh": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ldl": {
+          "$ref": "#/$defs/labRange"
+        },
+        "leukocytes": {
+          "$ref": "#/$defs/labRange"
+        },
+        "lh": {
+          "$ref": "#/$defs/labRange"
+        },
+        "lh_fsh_ratio": {
+          "$ref": "#/$defs/labRange"
+        },
+        "lipase": {
+          "$ref": "#/$defs/labRange"
+        },
+        "lymphocytes": {
+          "$ref": "#/$defs/labRange"
+        },
+        "magnesium": {
+          "$ref": "#/$defs/labRange"
+        },
+        "mch": {
+          "$ref": "#/$defs/labRange"
+        },
+        "mchc": {
+          "$ref": "#/$defs/labRange"
+        },
+        "mcv": {
+          "$ref": "#/$defs/labRange"
+        },
+        "monocytes": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ogtt_2h": {
+          "$ref": "#/$defs/labRange"
+        },
+        "pco2": {
+          "$ref": "#/$defs/labRange"
+        },
+        "pct": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ph": {
+          "$ref": "#/$defs/labRange"
+        },
+        "phosphate": {
+          "$ref": "#/$defs/labRange"
+        },
+        "po2": {
+          "$ref": "#/$defs/labRange"
+        },
+        "potassium": {
+          "$ref": "#/$defs/labRange"
+        },
+        "pregnancy_test": {
+          "$ref": "#/$defs/labRange"
+        },
+        "progesterone": {
+          "$ref": "#/$defs/labRange"
+        },
+        "prolactin": {
+          "$ref": "#/$defs/labRange"
+        },
+        "ptz": {
+          "$ref": "#/$defs/labRange"
+        },
+        "quick": {
+          "$ref": "#/$defs/labRange"
+        },
+        "reticulocytes": {
+          "$ref": "#/$defs/labRange"
+        },
+        "rf": {
+          "$ref": "#/$defs/labRange"
+        },
+        "scc": {
+          "$ref": "#/$defs/labRange"
+        },
+        "segmented_neutrophils": {
+          "$ref": "#/$defs/labRange"
+        },
+        "shbg": {
+          "$ref": "#/$defs/labRange"
+        },
+        "so2": {
+          "$ref": "#/$defs/labRange"
+        },
+        "sodium": {
+          "$ref": "#/$defs/labRange"
+        },
+        "t3": {
+          "$ref": "#/$defs/labRange"
+        },
+        "t4": {
+          "$ref": "#/$defs/labRange"
+        },
+        "testosterone": {
+          "$ref": "#/$defs/labRange"
+        },
+        "tg_ab": {
+          "$ref": "#/$defs/labRange"
+        },
+        "thrombocytes": {
+          "$ref": "#/$defs/labRange"
+        },
+        "total_cholesterol": {
+          "$ref": "#/$defs/labRange"
+        },
+        "total_protein": {
+          "$ref": "#/$defs/labRange"
+        },
+        "tpo_ab": {
+          "$ref": "#/$defs/labRange"
+        },
+        "transferrin": {
+          "$ref": "#/$defs/labRange"
+        },
+        "triglycerides": {
+          "$ref": "#/$defs/labRange"
+        },
+        "troponin": {
+          "$ref": "#/$defs/labRange"
+        },
+        "tsh": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urea": {
+          "$ref": "#/$defs/labRange"
+        },
+        "uric_acid": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_bacteria": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_bilirubin": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_density": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_dipstick": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_erythrocytes": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_glucose": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_ketones": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_leukocytes": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_nitrite": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_ph": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_protein": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_protein_creatinine": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_rbc": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_status": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_urobilinogen": {
+          "$ref": "#/$defs/labRange"
+        },
+        "urine_wbc": {
+          "$ref": "#/$defs/labRange"
+        }
+      }
+    },
+    "config": {
+      "type": "object",
+      "required": [
+        "request_whitelist"
+      ],
+      "properties": {
+        "request_whitelist": {
+          "type": "object",
+          "required": [
+            "imaging",
+            "laboratory"
+          ],
+          "properties": {
+            "imaging": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "laboratory": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "gender": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "w",
+            "m"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "w",
+              "m"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      ]
+    },
+    "sc_key": {
+      "type": "string"
+    },
+    "vitals": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "string",
+          "boolean"
+        ]
+      }
+    },
+    "history": {
+      "type": "object",
+      "required": [
+        "menstruation",
+        "general_history"
+      ],
+      "properties": {
+        "menstruation": {
+          "type": "object"
+        },
+        "general_history": {
+          "type": "object",
+          "required": [
+            "bmi",
+            "height",
+            "surgeries",
+            "pre_existing_conditions"
+          ],
+          "properties": {
+            "bmi": {
+              "type": "object",
+              "required": [
+                "min",
+                "max"
+              ],
+              "properties": {
+                "min": {
+                  "type": "number"
+                },
+                "max": {
+                  "type": "number"
+                }
+              }
+            },
+            "height": {
+              "type": "object",
+              "required": [
+                "min",
+                "max"
+              ],
+              "properties": {
+                "min": {
+                  "type": "number"
+                },
+                "max": {
+                  "type": "number"
+                }
+              }
+            },
+            "surgeries": {
+              "type": "object",
+              "properties": {
+                "common_surgeries_women": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "pre_existing_conditions": {
+              "type": "object",
+              "properties": {
+                "static_value": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "object",
+      "properties": {
+        "us": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "mri": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "ct": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "xray": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "ctg": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "ecg": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "surgery": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "microbiology": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "biopsy": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "cytology_pathology": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        },
+        "bloodbank": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "static_report": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "static_report"
+            ]
+          }
+        }
+      }
+    },
+    "vignette": {
+      "type": "string"
+    },
+    "internal_name": {
+      "type": "string"
+    },
+    "vignette_patient": {
+      "type": "string"
+    },
+    "vignette_evaluation": {
+      "type": "string"
+    },
+    "cardinal_symptoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "labRange": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

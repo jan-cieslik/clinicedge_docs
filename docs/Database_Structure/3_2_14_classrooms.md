@@ -9,6 +9,7 @@ The `classrooms` table in Supabase stores the created classrooms, to which sever
 | `id`          | bigint  | number | Internal ID for each created classroom                                    |
 | `name`        | text    | string |  Name of each classroom                                                   |
 | `default`     | bool    | boolean| `TRUE`, if classroom is active and should be shown in the case overview; `FALSE`, if classroom is inactive |
+| `mode`        | text    | string| `rnd`, if cases should be selected randomly; `NULL`, if cases are selected by the creator of the classroom |
 
 ![](./Images/3_2_14_classrooms_supabase.png)
 
