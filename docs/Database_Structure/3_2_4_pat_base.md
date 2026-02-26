@@ -11,6 +11,10 @@ The `pat_data` contains all patient-specific findings and values in JSON format 
 | `pat_id`     | bigint   | number | Internal ID for each generated patient case                               |
 | `case_id`     | bigint  | number | Internal ID for each case template                                        |
 | `pat_data`   | jsonb    | json   | JSON object containing all generated patient-specific parameters          |
+| `pat_completed`| bool   | boolean| `TRUE` if case was completed, `FALSE` if not          |
+| `ref`         | text    | string | Shows to which classroom the case is assigned to           |
+| `pat_rating`  | jsonb   | json   | Ratings of the patient case, which were given by the users          |
+| `pat_designer`| jsonb   | json   | Configurations of the case made by the user          |
 
 ![](./Images/3_2_4_pat_base_supabase.jpg)
 

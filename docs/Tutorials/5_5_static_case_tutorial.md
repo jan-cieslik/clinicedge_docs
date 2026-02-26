@@ -4,7 +4,7 @@ The following steps describe, how you can create a static case for CLINIC-EDGE.
 
 ### 1. Create a JSON FIle and Add Basic Information
 
-Cases for CLINIC-EDGE are saved as JSON files, so the first step is creating a new file for your case. Make sure you enclose the entire case template in `{}`, as this is essential for the structure of JSON files.
+Cases for CLINIC-EDGE are saved as JSON files, so the first step is creating a new file for your case. Make sure you enclose the entire case template in `{}`, as this is essential for the structure of JSON files. You can control if the structure is right by using a JSON validator with the file [case_validator.json](./files/case_validator.json).
 
 Then, add the following information inside the brackets:
 - **name of the case:**
@@ -187,23 +187,50 @@ An overview of the available requests is found in the following table.
 
 | Request Groups          | Request Items         | Options                                                                                                   |
 |-------------------------|-----------------------|-----------------------------------------------------------------------------------------------------------|
-| `"laboratory"`          | `"labs"`              | Overview in the file [lab_value_overview.pdf](./files/lab_value_overview.pdf)                                                             |
-|                         | `"microbiology""`     | `"urine_culture"`, `"vaginal_swab"`                                                                       |  
-|                         | `"bloodbank"`         | `"blood_group"`, `"blood_antibodies"` (Antibody Screening)                                                |
-| `"imaging"`             | `"mri"`               | `"mri_skull_whole"`, `"mri_skull_brainstem"`, `"mri_skull_pituitary"`, `"mri_skull_orbital"`, `"mri_thorax_whole"`, `"mri_thorax_heart"`, `"mri_abdomen_whole"`, `"mri_abdomen_liver"`, `"mri_abdomen_pancreas"`, `"mri_abdomen_spleen"`, `"mri_mamma_whole"`, `"mri_pelvic_whole"`|
+| `"general"`          | `"physical"`              | `"physical_abdominal"`, `"physical_breast"`, `"physical_muscle"`, `"physical_neurological"`, `"physical_skin"`, `"physical_thorax"`, `"physical_thorax_lung"`, `"physical_thorax_heart"`, `"physical_vaginal"`, `"physical_ent"`, `"physical_eyes"`, `"physical_lymph_nodes"`        |
+| `"laboratory"`          | `"labs"`              | Overview in the file [lab_value_overview.pdf](./files/lab_value_overview.pdf)        |
+|                         | `"microbiology""`     | `"urine_culture"`, `"vaginal_swab"`, `"clostridioides_difficile"`, `"helicobacter_pylori"`, `"salmonella"`, `"parasites"`, `"malaria"`, `"blood_culture"`                     |  
+|                         | `"bloodbank"`         | `"blood_group"`, `"blood_antibodies"` (Antibody Screening)   |
+|                         | `"virology"`         | `"hbs_ag"`, `"anti_hbs"`, `"hbv_dna"`, `"anti_hbc"`, `"anti_hbc_igm"`, `"hbeag"`, `"anti_hav_igm"`, `"anti_hav_igg"`, `"anti_hcv"`, `"hcv_rna"`    |
+| `"imaging"`             | `"mri"`               | `"mri_skull_whole"`, `"mri_skull_brainstem"`, `"mri_skull_pituitary"`, `"mri_skull_orbital"`, `"mri_thorax_whole"`, `"mri_thorax_heart"`, `"mri_abdomen_whole"`, `"mri_abdomen_liver"`, `"mri_abdomen_pancreas"`, `"mri_abdomen_spleen"`, `"mri_mamma_whole"`, `"mri_pelvic_whole"`, `"mri_thorax_abdomen_whole"`|
 |                         | `"ct"`                | `"ct_skull_whole"`, `"ct_skull_stroke"`, `"ct_thorax_abdomen"`, `"ct_thorax_whole"`, `"ct_abdomen_whole"` |
-|                         | `"us"`                | `"us_abdominal"`, `"us_abdominal_preg"`, `"us_tv"`, `"us_rectal"`, `"us_mamma"`, `"us_tte"` (Transthoracic Echo), `"us_tee"` (Transesophageal Echo)   |
-|                         | `"xray"`              | `"xray_skull"`, `"xray_thorax"`, `"xray_abdomen"`                                                         |
-|                         | `"ctg"`               | `"ctg_regular"`                                                                                           |
-|                         | `"ecg"`               | `"ecg_regular"`                                                                                           |
-| `"invasive_diagnostics"`| `"surgery"`           | `"hsc"` (Hysteroscopy), `"lsc"` (Laparoscopy), `"colposcopy"`                                             |
-|                         | `"cytology_pathology"`| `"pap_smear"`, `"hpv_test"`, `"breast_biopsy"`, `"cervical_biopsy"`, `"endometrial_biopsy"`, `"ovarian_biopsy"`, `"vulvar_biopsy"`|
+|                         | `"us"`                | `"us_abdominal"`, `"us_abdominal_preg"`, `"us_tv"`, `"us_rectal"`, `"us_mamma"`, `"us_tte"` (Transthoracic Echo), `"us_tee"` (Transesophageal Echo), `"us_testicles"`, `"us_kidney"`, `"us_thyroid"`   |
+|                         | `"xray"`              | `"xray_skull"`, `"xray_thorax"`, `"xray_abdomen"`                  |
+|                         | `"ctg"`               | `"ctg_regular"`                                       |
+|                         | `"ecg"`               | `"ecg_regular"`                      |
+| `"invasive_diagnostics"`| `"surgery"`           | `"hsc"` (Hysteroscopy), `"lsc"` (Laparoscopy), `"bronchoscopy"`, `"colposcopy"`, `"colonoscopy"`, `"cytoscopy"`, `"ercp"`, `"esophagoscopy"`, `"gastroscopy"`, `"rhinoscopy"`    |
+|                         | `"cytology_pathology"`| `"pap_smear"`, `"hpv_test"`, `"breast_biopsy"`, `"cervical_biopsy"`, `"endometrial_biopsy"`, `"ovarian_biopsy"`, `"vulvar_biopsy"`, `"blood_smear"`|
 |                         | `"biopsy"`            | `"breast_us"` (Breastbiopsy - Sonographic), `"breast_mamm"` (Breastbiopsy - Mammographic), `"breast_mri"` (Breastbiopsy - MRI-guided) |
 
-### 5. Add a `vignette`
+### 5. Add a `config`
+
+Add a `config`, in which you can define which requests are available for this case (`request_whitelist`) or which parts of the case can be configurated by the user (`designer`). This step is optional. An example is shown here:
+
+```json
+{
+  "config": {
+    "request_whitelist": {
+      "imaging": [
+        "ctg",
+        "us"
+      ],
+      "laboratory": [
+        "labs"
+      ]
+    },
+    "designer": {
+      "chat": true,
+      "general": true,
+      "vignettes": true
+    }
+  },
+}
+```
+
+### 6. Add a `vignette`
 
 A `vignette` is a brief description of the case, which will appear on the landing page. you an add the `vignette` to the JSON case in `CaseTemplates` as you added the age, history etc. 
-In the following you can see an axample:
+In the following you can see an example:
 
 ```json
 {
@@ -229,7 +256,7 @@ The third type, the `vignette_evaluation`, is a sample solution of the handover,
 }
 ```
 
-### 6. Add `cardinal_symptoms`
+### 7. Add `cardinal_symptoms`
 
 To add the cardinal symptoms of your case, use the following structure:
 
