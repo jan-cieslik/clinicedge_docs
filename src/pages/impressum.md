@@ -1,5 +1,6 @@
 ---
 title: Impressum
+description: Publisher and institutional contact information for the ClinicEdge documentation website.
 ---
 
 # Impressum

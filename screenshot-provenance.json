@@ -1,0 +1,70 @@
+{
+  "applicationRevision": "6b78b10fbe99187687bfb86a944fe1f17da0fd8f",
+  "applicationHadLocalChanges": true,
+  "language": "en",
+  "data": "Synthetic fixtures only. No .env, database files, or existing build output copied.",
+  "screenshots": [
+    {
+      "file": "admin-settings-desktop.webp",
+      "fixture": "tests/browser_admin_consolidation.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "width": 1440,
+      "height": 1140
+    },
+    {
+      "file": "admin-settings-mobile.webp",
+      "fixture": "tests/browser_admin_consolidation.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "width": 375,
+      "height": 1400
+    },
+    {
+      "file": "supervisor-1280.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "width": 1280,
+      "height": 1607
+    },
+    {
+      "file": "desktop-1280.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "file": "mobile-375.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "width": 375,
+      "height": 812
+    },
+    {
+      "file": "supervisor-375.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "width": 375,
+      "height": 2044
+    },
+    {
+      "file": "display-1280.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "file": "display-375.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "width": 375,
+      "height": 900
+    }
+  ]
+}

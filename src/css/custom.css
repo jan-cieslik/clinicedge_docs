@@ -1,75 +1,38 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2ba8ac;
-  --ifm-color-primary-dark: #247579;
-  --ifm-color-primary-darker: #1f8588;
-  --ifm-color-primary-darkest: #1a6d71;
-  --ifm-color-primary-light: #3ab8bc;
-  --ifm-color-primary-lighter: #4dc2c6;
-  --ifm-color-primary-lightest: #7dd7d9;
+  --ifm-color-primary: #14686b;
+  --ifm-color-primary-dark: #125e60;
+  --ifm-color-primary-darker: #11585b;
+  --ifm-color-primary-darkest: #0e494b;
+  --ifm-color-primary-light: #167276;
+  --ifm-color-primary-lighter: #17787b;
+  --ifm-color-primary-lightest: #1a878b;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(43, 168, 172, 0.1);
+  --ifm-heading-line-height: 1.25;
+  --docusaurus-highlighted-code-line-bg: rgba(20, 104, 107, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #4dc2c6;
-  --ifm-color-primary-dark: #3ab8bc;
-  --ifm-color-primary-darker: #2ba8ac;
-  --ifm-color-primary-darkest: #247579;
-  --ifm-color-primary-light: #6ecfd0;
-  --ifm-color-primary-lighter: #7dd7d9;
-  --ifm-color-primary-lightest: #a8e2e4;
-  --docusaurus-highlighted-code-line-bg: rgba(43, 168, 172, 0.2);
+  --ifm-color-primary: #70d3d4;
+  --ifm-color-primary-dark: #54cacc;
+  --ifm-color-primary-darker: #46c6c7;
+  --ifm-color-primary-darkest: #30afb0;
+  --ifm-color-primary-light: #8cdcdc;
+  --ifm-color-primary-lighter: #9ae0e1;
+  --ifm-color-primary-lightest: #c4eded;
+  --docusaurus-highlighted-code-line-bg: rgba(112, 211, 212, 0.12);
 }
 
-/* Custom accent colors for links and highlights */
-a {
-  color: #2ba8ac;
+.markdown {
+  line-height: 1.75;
 }
 
-a:hover {
-  color: #1f8588;
+.markdown img {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.5rem;
+  height: auto;
 }
 
-/* Button styling */
-.button.button--primary {
-  background-color: #2ba8ac;
+:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 3px;
 }
-
-.button.button--primary:hover {
-  background-color: #1f8588;
-}
-
-/* Card styling for better visual hierarchy */
-.card {
-  box-shadow: 0 2px 8px rgba(43, 168, 172, 0.1);
-}
-
-/* Sidebar styling */
-.sidebar-inner {
-  background-color: #f8fafb;
-}
-
-.sidebar-item-link {
-  color: #2c3e50;
-}
-
-.sidebar-item-link.sidebar-item-link--active {
-  color: #2ba8ac;
-  border-left-color: #2ba8ac;
-}
-
-/* Code block styling */
-:not(pre) > code[class*='language-'] {
-  background-color: rgba(43, 168, 172, 0.1);
-  color: #1f8588;
-}
-
-
