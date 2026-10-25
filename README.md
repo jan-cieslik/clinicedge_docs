@@ -4,7 +4,7 @@ English user and operator documentation for [ClinicEdge](https://github.com/jan-
 
 ## Develop and validate
 
-Use Node.js 22 or later and npm. The Docusaurus runtime, themes, plugins, and type packages are aligned on **3.10.2**; React/React DOM use the compatible 19.3 series.
+Use Node.js **22.12.0 or later** and npm; [.node-version](.node-version) pins the tested build runtime to **22.23.3**. The Docusaurus runtime, themes, plugins, and type packages are aligned on **3.10.2**; React/React DOM use the compatible 19.3 series.
 
 ```bash
 npm ci
@@ -95,6 +95,19 @@ The canonical origin is configured in [docusaurus.config.js](docusaurus.config.j
 Deploy the generated `build/` directory to the existing static host. With `trailingSlash: false`, normal pages are emitted as `.html` files and legacy redirects as directory indexes: configure the host to resolve extensionless URLs, or use a compatible static host such as the existing GitHub Pages deployment. Test deep links and redirects on the actual host.
 
 If using Docusaurus's GitHub Pages deploy workflow, review repository permissions and credentials locally, then run `npm run deploy`. Building this repository does not deploy the ClinicEdge application. Never put a GitHub token in this README or commit runtime credentials.
+
+### Cloudflare Pages
+
+Use these Git-connected Pages build settings:
+
+- **Root directory:** the documentation repository root (leave blank when it is the whole repository).
+- **Build command:** `npm run build`.
+- **Build output directory:** `build`.
+- **Node.js:** the committed `.node-version` selects **22.23.3**. If a `NODE_VERSION` environment variable is configured, remove an older override or set it to `22.23.3` for both Production and Preview.
+
+Cloudflare's v2 build image defaults to Node.js 18.17.1, which cannot build this site. Docusaurus requires at least Node 20, but the locked Mermaid/Commander dependencies require at least **22.12.0**; Node 20 is therefore not sufficient. The `package.json` engine requirement alone is not a reliable Cloudflare runtime selector; keep `.node-version` committed.
+
+After pushing the runtime configuration, retry the deployment and confirm the build log detects Node.js **22.23.3** before dependency installation. If it still detects Node 18, check the configured root directory, deployed commit, and Production/Preview `NODE_VERSION` overrides. No Wrangler configuration or Workers runtime is needed for this static Pages site.
 
 ## Dependency advisory status
 
