@@ -35,7 +35,7 @@ The blog is retained with refreshed current links and explicit update/historical
 
 ## Verify against the application
 
-The rewrite was checked against application revision `6b78b10fbe99187687bfb86a944fe1f17da0fd8f` plus the locally present moderation form changes recorded in [screenshot provenance](screenshot-provenance.json).
+The course-administrator and course-staff guides were refreshed against application **v0.9.3**, revision `b853bbdefbf41f8f9939727db9f34b5002b1a7c1`, on 2026-10-25. The refresh covers classroom introductions, separate viewing/management grants, questionnaire correction operations and timers, Stats, projection-link management, and the complete sequence/seminar teaching workflow. See [screenshot provenance](screenshot-provenance.json) for the exact capture revision and worktree state.
 
 Use implementation and tests as the final authority; even the application's README can contain outdated references.
 
@@ -78,9 +78,9 @@ Two source fixtures are reused:
 - `tests/browser_admin_consolidation.mjs`: native account/security checks and settings screenshots.
 - `tests/browser_seminar_integration.mjs`: real API/browser seminar publication, student/staff/display flows and responsive checks.
 
-The disposable seminar test copy explicitly reselects **Live** before opening/releasing content because development refresh can reset the tab during compilation of other routes. Production application and original test files are unchanged; all assertions remain. These development-runtime tests are not production application-build verification.
+The disposable seminar test copy explicitly reselects **Live** before opening/releasing content because development refresh can reset the tab during compilation of other routes. It also captures the real authoring form, published revisions, learner sequence overview/waiting/continuation, private clinical documentation, supervised-run history, and attendance correction. Capture adapters assert unique source anchors and fail explicitly if the upstream fixture changes. Production application and original test files are unchanged; all assertions remain. These development-runtime tests are not production application-build verification.
 
-Selected captures become compressed WebP files in [static/img/guides](static/img/guides). Settings captures are cropped to the relevant controls. [screenshot-provenance.json](screenshot-provenance.json) records the revision, dirty-worktree caveat, fixtures, adapter, and output dimensions.
+Selected captures become compressed WebP files in [static/img/guides](static/img/guides). Settings and seminar-authoring captures are cropped to the relevant controls. [screenshot-provenance.json](screenshot-provenance.json) records the revision, worktree state, capture timestamp, fixtures, adapter, and output dimensions.
 
 **Review every image before publishing.** Never publish login PINs, recovery codes, OTP QR/setup secrets, bearer links, private keys, real identities, or clinical records. Even synthetic usable credentials must stay out. Do not copy raw runner reports/logs into public static assets. Development indicators and generic fixture titles may be visible; captions identify the synthetic content.
 

@@ -64,6 +64,40 @@ try {
     assert.ok(seminarSource.includes(anchor), 'Seminar fixture changed; review the Live-tab capture adapter');
     seminarSource = seminarSource.replace(anchor, `await pages.supervisor.getByRole("tab", { name: "Live", exact: true }).click();\n      ${anchor}`);
   }
+  function adapt(anchor, replacement) {
+    assert.equal(seminarSource.split(anchor).length, 2, `Seminar fixture changed; review capture anchor: ${anchor}`);
+    seminarSource = seminarSource.replace(anchor, replacement);
+  }
+  adapt('    const pages = {};', `    const authorPage = await contexts.admin.newPage();
+    await authorPage.goto("/en/moderator/classrooms");
+    const sequencePanel = authorPage.getByRole("tabpanel", { name: "Sequence", exact: true });
+    await sequencePanel.waitFor();
+    await sequencePanel.getByText("Optional case import", { exact: true }).first().waitFor();
+    await sequencePanel.locator("fieldset > ol > li").first().screenshot({ path: path.join(artifacts, "seminar-authoring.png") });
+    await authorPage.getByRole("tab", { name: "Revisions", exact: true }).click();
+    const revisionsPanel = authorPage.getByRole("tabpanel", { name: "Revisions", exact: true });
+    await revisionsPanel.locator("details > summary").first().click();
+    await revisionsPanel.screenshot({ path: path.join(artifacts, "sequence-publication.png") });
+    await authorPage.close();
+    const pages = {};`);
+  adapt('        await pages[role].getByRole("button", { name: "Start", exact: true }).waitFor();', `        await pages[role].getByRole("button", { name: "Start", exact: true }).waitFor();
+        if (role === "desktop") await pages[role].screenshot({ path: path.join(artifacts, "sequence-overview.png"), fullPage: true });`);
+  adapt('      assert.equal((await client.collection("classroom_sequence_enrollments").getFullList()).length, 0);', `      await pages.desktop.screenshot({ path: path.join(artifacts, "seminar-waiting.png"), fullPage: true });
+      assert.equal((await client.collection("classroom_sequence_enrollments").getFullList()).length, 0);`);
+  adapt('    await check("manual judgment event and private records/export use actual app contracts", async () => {', `    await pages.supervisor.getByRole("tab", { name: "Clinical documentation", exact: true }).click();
+    await pages.supervisor.getByRole("heading", { name: "Private", exact: true }).waitFor();
+    await pages.supervisor.getByText("Z00 Fixture diagnosis", { exact: true }).waitFor();
+    await pages.supervisor.getByRole("checkbox", { name: "Include in summary", exact: true }).check();
+    await pages.supervisor.screenshot({ path: path.join(artifacts, "seminar-clinical.png"), fullPage: true });
+    await pages.supervisor.getByRole("tab", { name: "Live", exact: true }).click();
+    await check("manual judgment event and private records/export use actual app contracts", async () => {`);
+  adapt('      await page.getByRole("button", { name: "Add attendance", exact: true }).click();\n      await page.getByRole("status").filter({ hasText: "Late Browser Student was added" }).waitFor();', `      await page.getByRole("button", { name: "Add attendance", exact: true }).click();
+      await page.getByRole("status").filter({ hasText: "Late Browser Student was added" }).waitFor();
+      await page.screenshot({ path: path.join(artifacts, "seminar-attendance.png"), fullPage: true });`);
+  adapt('      await page.screenshot({ path: path.join(artifacts, "supervisor-my-seminars.png"), fullPage: true });', `      await page.getByRole("row").filter({ hasText: "Fixture group seminar" }).getByRole("button", { name: "Attendance", exact: true }).waitFor();
+      await page.screenshot({ path: path.join(artifacts, "supervisor-my-seminars.png"), fullPage: true });`);
+  adapt('      assert.equal((await json(contexts[role], learnerBase)).items[1].status, "available");', `      assert.equal((await json(contexts[role], learnerBase)).items[1].status, "available");
+      if (role === "desktop") await pages[role].screenshot({ path: path.join(artifacts, "sequence-continuation.png"), fullPage: true });`);
   await writeFile(seminarRunner, seminarSource);
   await mkdir(output, {recursive: true});
   const env = {
@@ -86,7 +120,7 @@ try {
     {
       script: 'tests/browser_seminar_integration.mjs',
       variable: 'SEMINAR_INTEGRATION_ARTIFACTS',
-      files: ['supervisor-1280', 'desktop-1280', 'mobile-375', 'supervisor-375', 'display-1280', 'display-375'],
+      files: ['seminar-authoring', 'sequence-publication', 'sequence-overview', 'seminar-waiting', 'seminar-clinical', 'seminar-attendance', 'supervisor-my-seminars', 'sequence-continuation', 'supervisor-1280', 'desktop-1280', 'mobile-375', 'supervisor-375', 'display-1280', 'display-375'],
     },
   ];
   for (const job of jobs) {
@@ -97,11 +131,11 @@ try {
       const image = sharp(path.join(artifacts, `${name}.png`));
       const metadata = await image.metadata();
       assert.ok(metadata.width >= 375 && metadata.height > 100, `Invalid capture: ${name}`);
-      const cropHeight = name === 'admin-settings-desktop' ? 1140 : name === 'admin-settings-mobile' ? 1400 : metadata.height;
+      const cropHeight = name === 'admin-settings-desktop' ? 1140 : name === 'admin-settings-mobile' ? 1400 : name === 'seminar-authoring' ? 835 : metadata.height;
       await image.extract({left: 0, top: 0, width: metadata.width, height: cropHeight})
         .resize({width: Math.min(metadata.width, 1440), withoutEnlargement: true})
         .webp({quality: 82}).toFile(path.join(output, `${name}.webp`));
-      provenance.push({file: `${name}.webp`, fixture: job.script, runtime: 'real application and disposable PocketBase', ...(job.variable === 'SEMINAR_INTEGRATION_ARTIFACTS' ? {adapter: 'Reselect Live tab before open/release after development refresh; assertions unchanged.'} : {}), width: metadata.width, height: cropHeight});
+      provenance.push({file: `${name}.webp`, fixture: job.script, runtime: 'real application and disposable PocketBase', ...(job.variable === 'SEMINAR_INTEGRATION_ARTIFACTS' ? {adapter: 'Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.'} : {}), width: metadata.width, height: cropHeight});
     }
     console.log(`PASS ${job.script}: ${job.files.length} optimized captures`);
   }
@@ -110,6 +144,7 @@ try {
   await writeFile(path.join(docs, 'screenshot-provenance.json'), `${JSON.stringify({
     applicationRevision: revision,
     applicationHadLocalChanges: dirty,
+    capturedAt: new Date().toISOString(),
     language: 'en',
     data: 'Synthetic fixtures only. No .env, database files, or existing build output copied.',
     screenshots: provenance,

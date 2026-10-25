@@ -28,7 +28,7 @@ If a user loses both authenticator and recovery codes, a trusted operator must v
 
 - Application administrators have system-wide privileges.
 - Content edit/review permissions are separate by entry type.
-- Classroom, access-code, study, and bug-report tools are independently delegated.
+- Classroom, questionnaire, Stats, access-code, study, and bug-report tools are independently delegated. Classroom/questionnaire viewing and management are separate capabilities; Stats is a read-only viewing/download grant.
 - Supervision requires assignment to the particular classroom; moderation alone is insufficient.
 - Restricted LTI and ID/PIN learner access must not be treated as staff authority.
 

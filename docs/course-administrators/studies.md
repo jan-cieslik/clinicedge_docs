@@ -5,7 +5,7 @@ description: Configure approved ClinicEdge studies, versioned consent PDFs, opti
 
 # Manage studies and consent
 
-**Access:** independent `studies` tool, or application administrator. Open **Administration > Studies**. Access-code permission alone does not grant study management.
+**Access:** independent `studies` management permission, or application administrator. Open **Administration > Studies**. A studies viewing grant is read-only; access-code permission alone does not grant study management.
 
 ## Prepare before activation
 

@@ -17,6 +17,9 @@ Use the **Moderation** panel to prepare teaching content and organize courses. I
 5. Add [assessments](./assessments.md), [learning classes](./learning-classes.md), or [group seminars](./seminar-authoring.md) as needed.
 6. [Organize access and registration](./access-registration.md), then test as a synthetic learner.
 
+For a teacher-led sequence with a group seminar, use the [preparation and staff handoff checklist](./seminar-authoring.md). Give teachers the [live session guide](../course-staff/group-seminars.md), not only the authoring instructions. Publishing prepares the content; an assigned supervisor still needs to open and conclude the live run.
+
+Questionnaire authoring and Stats have [independent permissions](./permissions.md), not an implicit grant through classroom management. Use [results and statistics](./results-support.md) to choose the right reporting surface.
 ## What you should not need to do
 
 Routine authoring does not require changing source files, generating SQL/CSV imports, or editing patient records in a database dashboard. Structured forms, validation, previews, and publication replace that old workflow.

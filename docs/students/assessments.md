@@ -15,6 +15,8 @@ Only successfully saved answers can be recovered after reload. If saving fails, 
 
 Some follow-up questions appear only after a particular earlier choice. Hidden questions do not require answers or contribute to final scoring.
 
+If a start confirmation shows a time limit, read its calculation and expiry action. A **Lock** timer automatically submits the available answers when time runs out, even if you have not answered everything. Visual/warning limits do not force submission. Resuming does not start a new timer; watch save errors rather than assuming unsaved work is protected.
+
 ## Final submission
 
 The application checks required visible answers across all groups and asks you to confirm submission. Once submitted, answers are locked. There is one final submission for that course occurrence, not unlimited attempts.

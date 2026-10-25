@@ -5,7 +5,7 @@ description: Present ClinicEdge test questions, reveal correct answers, and inte
 
 # Present aggregate test results
 
-**Access:** administrator or the `classrooms` tool. In **Administration > Questionnaires**, choose the presentation-chart icon beside a **test**. Surveys do not have this mode.
+**Access:** application administrator or `questionnaires` viewing permission (management includes viewing), using a standard staff account. In **Administration > Questionnaires**, choose the presentation-chart icon beside a **test**. Classroom management or supervisor assignment alone does not grant this access. Surveys do not have this mode.
 
 ## Set the teaching scope
 

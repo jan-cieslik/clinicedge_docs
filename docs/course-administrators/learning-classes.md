@@ -5,7 +5,7 @@ description: Build reusable native ClinicEdge learning classes with media, flash
 
 # Create interactive learning classes
 
-**Access:** `classrooms` tool. Open **Administration > Learning Class Templates**.
+**Access:** `classrooms` management permission, or application administrator. Open **Administration > Learning Class Templates**. Questionnaire permission is separate and does not grant learning-class authoring.
 
 ## Build a reusable module
 

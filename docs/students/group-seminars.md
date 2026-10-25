@@ -11,6 +11,10 @@ Open the available seminar occurrence in your sequence. Complete preceding activ
 
 Before the supervisor opens the run, you see a waiting screen. When it becomes available, choose **Start case** to join.
 
+<img src="/img/guides/seminar-waiting.webp" alt="Synthetic seminar waiting screen before a staff member opens the shared run" width="1280" height="900" loading="lazy" decoding="async" />
+
+Waiting alone does not record your participation. After joining, check that the vignette and released-content navigation appear; ask the supervisor if you remain on the waiting screen.
+
 Despite that button label, a group seminar does not create your own individual patient. Your participation is tied to the shared run and your sequence.
 
 ## Follow the discussion
@@ -34,9 +38,11 @@ If staff hide an item, it is no longer available to browse. The vignette remains
 
 ## Timer and completion
 
-The shared timer is a soft teaching aid. Reaching zero does not automatically end the seminar or submit another course activity.
+The shared timer on the teaching display is a soft teaching aid; your own browsing view does not show that clock. Reaching zero does not automatically end the seminar or submit another course activity.
 
-The supervisor concludes the run. This completes joined participants' sequence activity and unlocks the next one. You can revisit retained released material subject to your course/account access.
+The supervisor concludes the run. This completes joined participants' sequence activity and unlocks the next one. Choose **Continue learning sequence**, then start the next available step. A following seminar still needs its own open run; a following test or survey needs your final submission.
+
+Use **Seminar archive** to revisit your run's retained released material, subject to your course/account access. Closing your browser does not conclude the seminar. If you never joined, you cannot simply join after it has concluded.
 
 If you attended but did not join correctly, ask the supervisor. Staff have a checked attendance-correction workflow; do not sign in as another learner or share their PIN.
 

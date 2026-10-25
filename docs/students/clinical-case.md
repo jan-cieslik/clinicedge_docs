@@ -39,6 +39,14 @@ Simply opening the finish page, closing the browser, or running out of account t
 
 Where enabled, provide stars/text feedback. A teacher may disable this feedback for a particular occurrence without removing handover or the evaluation vignette.
 
+## Review the completed-case timeline
+
+The finish page includes the recorded action timeline for your completed case. Clinical actions appear first; generic browser interactions are in a collapsed technical section. Times and recorded request/results, conversation, diagnosis, prescription, report, handover, and feedback details help you review your work.
+
+Historical details can be missing or marked as reconstructed/time-correlated rather than original snapshots. Do not treat a timestamp match as proof of an exact earlier input. Older cases may have no events. Clearing a chat does not remove already recorded event snapshots.
+
+The header timer stops at completion; older cases without a reliable completion time can show `--:--`. Clicking the clock hides/shows its display but does not pause tracking or disable warnings/closure. Overtime is possible with visual/warning limits.
+
 ## Continue your course
 
 A completed sequence case shows a continuation card for the next unfinished activity or a return link when the course is complete. Use it rather than starting a separate patient from another route.

@@ -9,7 +9,9 @@ description: Inspect ClinicEdge classroom activity, use sandbox previews, and in
 
 ## Prepare with previews
 
-Content previews use assigned content or published sequence snapshots. A sandbox creates an owned preview attempt excluded from learner statistics. Use this to prepare the session instead of working in a student's case.
+Choose **Content previews**, then the activity and published version. Case previews show the source content; **Launch sandbox**, then **Open sandbox**, creates an owned preview attempt excluded from learner statistics. Use this to prepare the session instead of working in a student's case.
+
+Previewing does not complete a learner's prerequisite or open a shared seminar run. For a teacher-led sequence, check each published activity with the course administrator, then use the separate **Group seminar** workspace and [run checklist](./group-seminars.md).
 
 ## Inspect a student attempt
 
@@ -24,6 +26,10 @@ Inspection is read-only: opening results, enlarging images, and reading reports 
 Use time, case, and where applicable sequence revision/activity filters. The minute window selects attempts **started** within that interval, including their current progress. It does not mean "completed during the interval."
 
 Test presentation uses submission time instead; do not expect the two filters to produce identical populations.
+
+The selected revision/activity scope is preserved between the overview, previews, and **Live presentation**. Applying a changed case filter clears revision/activity scope. Check the displayed version and activity before interpreting readiness; students pinned to a different revision are not all waiting at the same seminar step.
+
+Use **Live presentation** to discuss classroom-level participation and activity, not individual learners. Its detailed tables and controls differ from the narrower [counts-only public monitor](./projection.md#counts-only-preview-links).
 
 ## Read the metrics
 

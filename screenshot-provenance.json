@@ -1,6 +1,7 @@
 {
-  "applicationRevision": "6b78b10fbe99187687bfb86a944fe1f17da0fd8f",
-  "applicationHadLocalChanges": true,
+  "applicationRevision": "b853bbdefbf41f8f9939727db9f34b5002b1a7c1",
+  "applicationHadLocalChanges": false,
+  "capturedAt": "2026-10-25T16:29:35.005Z",
   "language": "en",
   "data": "Synthetic fixtures only. No .env, database files, or existing build output copied.",
   "screenshots": [
@@ -19,10 +20,74 @@
       "height": 1400
     },
     {
+      "file": "seminar-authoring.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
+      "width": 782,
+      "height": 835
+    },
+    {
+      "file": "sequence-publication.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
+      "width": 782,
+      "height": 117
+    },
+    {
+      "file": "sequence-overview.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "file": "seminar-waiting.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "file": "seminar-clinical.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
+      "width": 1280,
+      "height": 1059
+    },
+    {
+      "file": "seminar-attendance.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
+      "width": 1280,
+      "height": 1757
+    },
+    {
+      "file": "supervisor-my-seminars.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "file": "sequence-continuation.webp",
+      "fixture": "tests/browser_seminar_integration.mjs",
+      "runtime": "real application and disposable PocketBase",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
+      "width": 1280,
+      "height": 900
+    },
+    {
       "file": "supervisor-1280.webp",
       "fixture": "tests/browser_seminar_integration.mjs",
       "runtime": "real application and disposable PocketBase",
-      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
       "width": 1280,
       "height": 1607
     },
@@ -30,7 +95,7 @@
       "file": "desktop-1280.webp",
       "fixture": "tests/browser_seminar_integration.mjs",
       "runtime": "real application and disposable PocketBase",
-      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
       "width": 1280,
       "height": 900
     },
@@ -38,7 +103,7 @@
       "file": "mobile-375.webp",
       "fixture": "tests/browser_seminar_integration.mjs",
       "runtime": "real application and disposable PocketBase",
-      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
       "width": 375,
       "height": 812
     },
@@ -46,7 +111,7 @@
       "file": "supervisor-375.webp",
       "fixture": "tests/browser_seminar_integration.mjs",
       "runtime": "real application and disposable PocketBase",
-      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
       "width": 375,
       "height": 2044
     },
@@ -54,7 +119,7 @@
       "file": "display-1280.webp",
       "fixture": "tests/browser_seminar_integration.mjs",
       "runtime": "real application and disposable PocketBase",
-      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
       "width": 1280,
       "height": 900
     },
@@ -62,7 +127,7 @@
       "file": "display-375.webp",
       "fixture": "tests/browser_seminar_integration.mjs",
       "runtime": "real application and disposable PocketBase",
-      "adapter": "Reselect Live tab before open/release after development refresh; assertions unchanged.",
+      "adapter": "Reselect Live tab before open/release after development refresh; add authoring, sequence, waiting, clinical and attendance captures; assertions unchanged.",
       "width": 375,
       "height": 900
     }

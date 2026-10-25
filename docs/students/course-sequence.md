@@ -24,11 +24,15 @@ The first activity you actually start assigns the published course version to yo
 
 Do not create another account to change versions. Students do not have a self-service reset, retake, or repinning control.
 
-## Timed cases
+## Timed activities
 
-Read the start confirmation. Depending on configuration, reaching the case limit may only change the visual timer, warn you, or lock actions. Time calculation may include idle handling; do not assume minimizing the browser pauses the timer.
+Cases, surveys, and tests can be timed. Read the start confirmation. Depending on configuration, reaching the limit may only change the visual timer, warn you, or lock actions. Time calculation may include idle handling; do not assume minimizing the browser pauses the timer.
+
+For a survey/test configured with **Lock**, reaching the limit automatically submits the available answers, including an incomplete response.
 
 Resuming uses the existing attempt and timer. Cancelling the start confirmation does not create a patient.
+
+A group seminar has a separate shared **soft** timer. Reaching zero does not complete it: you must join and the supervisor must conclude. See [joining a seminar and continuing afterward](./group-seminars.md).
 
 ## A task stays locked
 

@@ -50,9 +50,10 @@ try {
     '/docs/students',
     '/docs/it-administrators/architecture',
     '/docs/it-administrators/configuration',
-    '/docs/course-administrators/sequences',
-    '/docs/course-staff/group-seminars',
-    '/docs/course-staff/projection',
+    ...['access-registration', 'assessments', 'cases', 'classrooms', 'learning-classes', 'permissions', 'publication', 'reference-content', 'results-support', 'seminar-authoring', 'sequences', 'studies']
+      .map((guide) => `/docs/course-administrators/${guide}`),
+    ...['group-seminars', 'projection', 'supervision', 'test-presentation']
+      .map((guide) => `/docs/course-staff/${guide}`),
     '/docs/students/group-seminars',
     '/blog',
     '/blog/roadmap-2026',

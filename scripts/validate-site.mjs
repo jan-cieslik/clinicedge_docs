@@ -130,7 +130,14 @@ for (const file of guides) {
   assert.equal((source.match(/^# /gm) || []).length, 1, `Source heading count: ${file}`);
 }
 const provenance = JSON.parse(await readFile(path.join(root, 'screenshot-provenance.json'), 'utf8'));
+assert.match(provenance.applicationRevision, /^[a-f0-9]{40}$/, 'Missing screenshot application revision');
+assert.ok(Number.isFinite(Date.parse(provenance.capturedAt)), 'Missing screenshot capture timestamp');
+assert.equal(new Set(provenance.screenshots.map(({file}) => file)).size, provenance.screenshots.length, 'Duplicate screenshot provenance');
+const guideSources = await Promise.all(guides.map((file) => readFile(file, 'utf8')));
 for (const image of provenance.screenshots) {
+  assert.match(image.file, /^[a-z0-9-]+\.webp$/, 'Invalid screenshot filename');
+  assert.ok(image.width >= 375 && image.height > 100, `Invalid captured dimensions: ${image.file}`);
   assert.ok(existsSync(path.join(build, 'img/guides', image.file)), `Missing captured image: ${image.file}`);
+  assert.ok(guideSources.some((source) => source.includes(`/img/guides/${image.file}`)), `Captured image is not used in a guide: ${image.file}`);
 }
 console.log(`PASS: ${guides.length} guides, ${urls.length} canonical sitemap pages, ${redirects.length} redirects, ${links} internal links/anchors, ${images} image references, ${provenance.screenshots.length} documented screenshots`);
